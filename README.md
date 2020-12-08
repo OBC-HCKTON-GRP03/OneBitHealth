@@ -9,19 +9,19 @@ Things you may want to cover:
 
 * System dependencies
 
-  PostgreSQL on Docker \
+  PostgreSQL on Docker /
 
-  To create the container (run only once): \
+  To create the container (run only once): /
   
     `$ docker run --name onebithealth_postgres -e POSTGRES_PASSWORD=dockerpqsql -d -p 5433:5432 postgres`
 
-  To run the container: \
+  To run the container: /
   
     `$ docker start onebithealth_postgres`
 
 * Configuration
 
-* Database creation \
+* Database creation /
 
     `$ rails db:create`
 
