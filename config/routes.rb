@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   resources :appointments do
     resources :exams
+    resources :treatments
   end
   root 'home#index'
   get 'home', to: 'home#index'
