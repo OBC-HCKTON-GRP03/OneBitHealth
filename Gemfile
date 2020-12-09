@@ -46,4 +46,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
+
+gem "simple_form", "~> 5.0"
+
 gem 'rubocop-rails', '~> 2.9', require: false
