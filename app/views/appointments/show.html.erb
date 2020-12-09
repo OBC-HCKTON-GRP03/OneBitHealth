@@ -20,10 +20,23 @@
   <%= @appointment.appointment_date %>
 </p>
 
+
+
 <p>
   <strong>User:</strong>
   <%= @appointment.user_id %>
 </p>
 
+<p>
+  <strong>Exames Relacionados:</strong>
+
+</p>
+<% for exam in @appointment.exams %>
+<ul>
+  <td><%= link_to "#{exam.title}", [@appointment, exam] %></td>
+</ul>
+<% end %>
+
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Add Exam', appointment_exams_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>

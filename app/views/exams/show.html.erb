@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @exam.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exam.description %>
+</p>
+
+<p>
+  <strong>Establishment name:</strong>
+  <%= @exam.establishment_name %>
+</p>
+
+<p>
+  <strong>Exam date:</strong>
+  <%= @exam.exam_date %>
+</p>
+
+<p>
+  <strong>Appointment:</strong>
+  <%= @exam.appointment_id %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_exam_path(@appointment, @exam) %> |
+<%= link_to 'Back', appointment_exams_path(@appointment) %>
