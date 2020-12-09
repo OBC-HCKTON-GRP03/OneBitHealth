@@ -2,7 +2,7 @@
 
 <h1>Appointments</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -16,16 +16,16 @@
 
   <tbody>
     <% @appointments.each do |appointment| %>
-      <tr>
-        <td><%= appointment.title %></td>
-        <td><%= appointment.description %></td>
-        <td><%= appointment.professional_name %></td>
-        <td><%= appointment.appointment_date %></td>
-        <td><%= appointment.user_id %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= appointment.title %></td>
+      <td><%= appointment.description %></td>
+      <td><%= appointment.professional_name %></td>
+      <td><%= appointment.appointment_date %></td>
+      <td><%= appointment.user_id %></td>
+      <td><%= link_to 'Show', appointment %></td>
+      <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+      <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
