@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<!-- ========================= CSS here ========================= -->
+
+	<%= stylesheet_link_tag 'application', 'principal_home_style.css' %>
+	<%= stylesheet_link_tag 'application', 'animate.css' %>
+	<%= stylesheet_link_tag 'application', 'bootstrap-5.0.5-alpha.min.css' %>
+	<%= stylesheet_link_tag 'application', 'LineIcons.2.0.css' %>
+	<%= stylesheet_link_tag 'application', 'tiny-slider.css' %>
+
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag 'favicon_logotipo_inicial_teste.png'%>
+
+</head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -19,3 +19,4 @@ require("bootstrap/dist/js/bootstrap")
 import $ from "jquery"
 
 import "bootstrap"
+import "../stylesheets/application"
