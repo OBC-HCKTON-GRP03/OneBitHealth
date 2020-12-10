@@ -1,0 +1,6 @@
+<h1>Editing Treatment</h1>
+
+<%= render 'form', treatment: @treatment %>
+
+<%= link_to 'Show', [@appointment,@treatment] %> |
+<%= link_to 'Back', appointment_treatments_path(@appointment) %>
