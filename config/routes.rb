@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :treatments
   end
   root 'home#index'
-  get 'home', to: 'home#index'
 
   devise_for :users
 

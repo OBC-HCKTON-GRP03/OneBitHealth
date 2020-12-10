@@ -1,0 +1,90 @@
+/* Header */
+
+.header_auth {
+	border-top: 8px solid var(--color-primary);
+	#link-img-header{
+		margin-top: -20px;
+		margin-left: auto;
+    margin-right: auto;
+		.img-logo-auth {
+			height: 100px;
+			width: 194px;
+		}
+	}
+
+	.description-page{
+		font-family: opensans-light,helvetica,arial,sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-top: -40px;
+    line-height: 1.33;
+    display: block;
+    padding: 16px 0 26px;
+	}
+}
+
+.link-input{
+	text-align: center;
+	margin-top: 10px;
+	.forgot-password{
+		color: var(--color-primary);
+	}
+	.forgot-password:hover{
+		color: #25B26F;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.forgot-email{
+		color: var(--color-primary);
+	}
+	.forgot-email:hover{
+		color: #25B26F;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.form-control{
+	-webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+}
+
+.submit_auth{
+	color: var(--color-primary);
+	font-weight: bold;
+}
+
+.button-submit-auth-entry{
+	background-color: var(--color-primary);
+	font-weight: bold;
+}
+
+.button-submit-auth-entry:hover{
+	background-color: #25B26F ;
+	font-weight: bold;
+}
+
+form{
+	label{
+		color: var(--gray-inputs-legends);
+	}
+}
