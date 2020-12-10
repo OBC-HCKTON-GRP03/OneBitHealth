@@ -7,5 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Active Record Associations
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
 end

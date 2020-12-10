@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_175038) do
+ActiveRecord::Schema.define(version: 2020_12_09_203820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 2020_12_09_175038) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "establishment_name", null: false
+    t.date "exam_date", null: false
+    t.bigint "appointment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_exams_on_appointment_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "establishment_name", null: false
+    t.integer "kind", null: false
+    t.date "treatment_date", null: false
+    t.bigint "appointment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_treatments_on_appointment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +63,6 @@ ActiveRecord::Schema.define(version: 2020_12_09_175038) do
   end
 
   add_foreign_key "appointments", "users"
+  add_foreign_key "exams", "appointments"
+  add_foreign_key "treatments", "appointments"
 end

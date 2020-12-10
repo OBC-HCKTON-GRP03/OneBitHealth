@@ -20,10 +20,37 @@
   <%= @appointment.appointment_date %>
 </p>
 
+
+
 <p>
   <strong>User:</strong>
   <%= @appointment.user_id %>
 </p>
 
+
+<% if @appointment.exams.any? %>
+<p>
+  <strong>Exames associados:</strong>
+</p>
+<% for exam in @appointment.exams %>
+<ul>
+  <td><%= link_to "#{exam.title}", [@appointment, exam] %></td>
+</ul>
+<% end %>
+<% end %>
+
+<% if @appointment.treatments.any? %>
+<p>
+  <strong>Tratamentos associados:</strong>
+</p>
+<% for treatment in @appointment.treatments %>
+<ul>
+  <td><%= link_to "#{treatment.title}", [@appointment, treatment] %></td>
+</ul>
+<% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Add Exam', appointment_exams_path(@appointment) %> |
+<%= link_to 'Add Treatment', appointment_treatments_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>
