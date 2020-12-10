@@ -1,94 +1,40 @@
-
-<div class="preloader">
-	<div class="loader">
-		<div class="ytp-spinner">
-			<div class="ytp-spinner-container">
-				<div class="ytp-spinner-rotator">
-					<div class="ytp-spinner-left">
-						<div class="ytp-spinner-circle"></div>
-					</div>
-					<div class="ytp-spinner-right">
-						<div class="ytp-spinner-circle"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	<!-- preloader end -->
-
-	<!-- ========================= header start ========================= -->
+<!-- ========================= header start ========================= -->
 	<header id="home" class="header">
 
 		<div class="header-wrapper">
-				<div class="header-top theme-bg">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="header-top-left text-center text-md-left">
-									<ul>
-										<li><a href="#"><i class="lni lni-phone"></i> +463281626556</a></li>
-										<li><a href="#"><i class="lni lni-envelope"></i> hellomedic@gmail.com</a></li>
+			<div class="navbar-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<nav class="navbar navbar-expand-lg">
+								<a class="navbar-brand" href="index.html">
+									<%= image_tag("logo_inicial_teste.png", alt: "Logo oneBitHealth") %>
+								</a>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+									aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="toggler-icon"></span>
+									<span class="toggler-icon"></span>
+									<span class="toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+									<ul id="nav" class="navbar-nav ml-auto">
+										<li class="nav-item">
+											<%= link_to "Minha Conta", "/users/sign_in", class: "page-scroll active" %>
+										</li>
+										<li class="nav-item">
+											<%= link_to "Cadastrar", "/users/sign_up", class: "page-scroll active" %>
+										</li>
 									</ul>
 								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="header-top-right d-none d-md-block">
-									<ul>
-										<li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-										<li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-										<li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-									</ul>
-								</div>
-							</div>
+							</nav>
 						</div>
-					</div>
-				</div>
-				<div class="navbar-area">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12">
-								<nav class="navbar navbar-expand-lg">
-									<a class="navbar-brand" href="index.html">
-										<img src="assets/img/logo/logo.svg" alt="Logo">
-									</a>
-									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-										aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-										<span class="toggler-icon"></span>
-										<span class="toggler-icon"></span>
-										<span class="toggler-icon"></span>
-									</button>
-				
-									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-										<ul id="nav" class="navbar-nav ml-auto">
-											<li class="nav-item active">
-												<a class="page-scroll active" href="#home">Home</a>
-											</li>
-											<li class="nav-item">
-												<a class="page-scroll" href="#about">About</a>
-											</li>
-											<li class="nav-item">
-												<a class="page-scroll" href="#services">Service</a>
-											</li>
-											<li class="nav-item">
-												<a class="page-scroll" href="#team">Doctor</a>
-											</li>
-											<li class="nav-item">
-												<a class="page-scroll" href="#blog">Blog</a>
-											</li>
-											<li class="nav-item">
-												<a class="page-scroll" href="#contact">Contact</a>
-											</li>
-										</ul>
-									</div> <!-- navbar collapse -->
-								</nav> <!-- navbar -->
-							</div>
-						</div> <!-- row -->
-					</div> <!-- container -->
-				</div> <!-- navbar area -->
+					</div> 
+				</div> 
+			</div> 
 		</div>
 
 		<div class="slider-wrapper">
+
 			<!-- ========================= slider-section start ========================= -->
 			<section class="slider-section">
 				<div class="slider-active slick-style">
@@ -110,51 +56,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="single-slider img-bg" style="background-image:url('assets/img/slider/slider-2.jpg');">
-						<div class="container">
-							<div class="row">
-								<div class="col-xl-7 col-lg-8 col-md-10">
-									<div class="slider-content">
-										<h1 data-animation="fadeInDown" data-duration="1.5s" data-delay=".5s">Best Doctors and Equipments in Town
-										</h1>
-										<p data-animation="fadeInLeft" data-duration="1.5s" data-delay=".7s">Lorem ipsum
-											dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt
-											ut labore et dolore magna aliquyam erat. Lorem ipsum dolor sit amet, consetetur
-											sadipscing elitr.</p>
-										<a href="#contact" class="btn theme-btn page-scroll" data-animation="fadeInUp" data-duration="1.5s"
-											data-delay=".9s">Make
-											Appoinment</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="single-slider img-bg" style="background-image:url('assets/img/slider/slider-3.jpg');">
-						<div class="container">
-							<div class="row">
-								<div class="col-xl-7 col-lg-8 col-md-10">
-									<div class="slider-content">
-										<h1 data-animation="fadeInDown" data-duration="1.5s" data-delay=".5s">Your Health is Our Top Priority
-										</h1>
-										<p data-animation="fadeInLeft" data-duration="1.5s" data-delay=".7s">Lorem ipsum
-											dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt
-											ut labore et dolore magna aliquyam erat. Lorem ipsum dolor sit amet, consetetur
-											sadipscing elitr.</p>
-										<a href="#services" class="btn theme-btn page-scroll" data-animation="fadeInUp" data-duration="1.5s"
-											data-delay=".9s">Our Services</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</section>
-			<!-- ========================= slider-section end ========================= -->
 		</div>
 	</header>
-	<!-- ========================= header end ========================= -->
-
-
 
 	<!--========================= we-do-section start========================= -->
 	<section class="we-do-section pt-150">
@@ -665,30 +570,10 @@
 						</form>
 						<div class="support d-flex">
 							<div class="support-icon">
-								<svg xmlns="http://www.w3.org/2000/svg" width="57.473" height="56.533" viewBox="0 0 57.473 56.533">
-									<g id="noun_customer_service_2786300" data-name="noun_customer service_2786300"
-										transform="translate(-11.49 -12.11)">
-										<path id="Path_94" data-name="Path 94"
-											d="M65.1,36.746a3.769,3.769,0,0,0-.485.052v-.209a3.858,3.858,0,0,0-2.746-3.664,21.6,21.6,0,0,0-43.166-.037,3.858,3.858,0,0,0-2.873,3.732v.209a3.769,3.769,0,0,0-.485-.052,3.866,3.866,0,0,0-3.858,3.858v7.515a3.866,3.866,0,0,0,3.858,3.858,3.732,3.732,0,0,0,.485-.052v.209a3.858,3.858,0,1,0,7.709,0V36.589a3.732,3.732,0,0,0-.037-.4V33.671a16.792,16.792,0,0,1,33.584,0v1.851a3.784,3.784,0,0,0-.164,1.037V52.172a3.829,3.829,0,0,0,.082.784c-1.1,2.463-4.254,8.426-9.56,10.075a4.023,4.023,0,1,0,.246,2.4c5.15-1.4,8.821-6.1,10.836-10.127a3.821,3.821,0,0,0,2.239.746,3.866,3.866,0,0,0,3.858-3.858v-.231a3.73,3.73,0,0,0,.485.052,3.866,3.866,0,0,0,3.851-3.858V40.6A3.866,3.866,0,0,0,65.1,36.746Z"
-											fill="#00adb5" />
-										<path id="Path_95" data-name="Path 95"
-											d="M35.595,41.324a5.97,5.97,0,0,1,1.59-4.478,4.858,4.858,0,0,1,3.6-1.358,4.627,4.627,0,0,1,3.485,1.53A5.052,5.052,0,0,1,45.715,40.6a9.866,9.866,0,0,1-.94,4.321,29.853,29.853,0,0,1-2.4,3.732q-.507.746-1.493,2.239l-.6.873q-.545.828-.813,1.306a1.1,1.1,0,0,0-.134.284h6.127v3.06H35.55V53.564a6.716,6.716,0,0,1,.694-1.134q.306-.485.7-1.067l.806-1.179q.746-.978,2.239-3.12a20.9,20.9,0,0,0,2.142-3.642,6.859,6.859,0,0,0,.582-2.746,2.463,2.463,0,0,0-.53-1.6,1.843,1.843,0,0,0-1.493-.694,1.918,1.918,0,0,0-1.843,1.493,3.4,3.4,0,0,0-.179,1.216v.746H35.595Z"
-											transform="translate(-6.104 -5.93)" fill="#00adb5" />
-										<path id="Path_96" data-name="Path 96"
-											d="M49.37,48.893l5.5-13.083h3.12V48.893h2v3.142h-2v4.478H54.87V52.035h-5.5Zm5.5,0V42.46L52.3,48.893Z"
-											transform="translate(-9.61 -6.012)" fill="#00adb5" />
+
 									</g>
 								</svg>
 							</div>
-							<h2> <span>Emergency Medical</span> Service 24/7</h2>
-						</div>
-						<div class="subscribe-links">
-							<ul>
-								<li><a href="#"><i class="lni lni-phone-set"></i> <span>+034895903478</span> </a> </li>
-								<li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-								<li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-								<li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -696,91 +581,6 @@
 		</div>
 	</section>
 	<!-- ========================= subscribe-section end ========================= -->
-
-	<!-- ========================= blog-section start ========================= -->
-	<section id="blog" class="blog-section pt-150">
-		<div class="shape shape-7">
-			<img src="assets/img/shapes/shape-6.svg" alt="">
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8 mx-auto">
-					<div class="section-title text-center mb-55">
-						<span class="wow fadeInDown" data-wow-delay=".2s">Blog Post</span>
-						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".4s">Latest News</h2>
-						<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-							dinonumy <br class="d-none d-lg-block"> eirmod tempor invidunt ut labore et dolore magn.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xl-4 col-lg-4 col-md-6">
-					<div class="single-blog mb-30 wow fadeInUp" data-wow-delay=".2s">
-						<div class="blog-img">
-							<a href="#"><img src="assets/img/blog/blog-1.png" alt=""></a>
-						</div>
-						<div class="blog-content">
-							<h4><a href="#">250+ Medical Tips We Just
-									Had to Share</a></h4>
-							<p>Lorem ipsum dolor sirtewt amertse consetetur sadipscing elitr, sedqw dinoumy eirmod tempor invidunt
-								sedrsu.</p>
-							<a class="read-more" href="#">Read More <i class="lni lni-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6">
-					<div class="single-blog mb-30 wow fadeInUp" data-wow-delay=".4s">
-						<div class="blog-img">
-							<a href="#"><img src="assets/img/blog/blog-2.png" alt=""></a>
-						</div>
-						<div class="blog-content">
-							<h4><a href="#">100+ Medical Tips We Just Had to Share</a></h4>
-							<p>Lorem ipsum dolor sirtewt amertse consetetur sadipscing elitr, sedqw dinoumy eirmod tempor invidunt
-								sedrsu.</p>
-							<a class="read-more" href="#">Read More <i class="lni lni-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6">
-					<div class="single-blog mb-30 wow fadeInUp" data-wow-delay=".6s">
-						<div class="blog-img">
-							<a href="#"><img src="assets/img/blog/blog-3.png" alt=""></a>
-						</div>
-						<div class="blog-content">
-							<h4><a href="#">250+ Medical Tips We Just Had to Share</a></h4>
-							<p>Lorem ipsum dolor sirtewt amertse consetetur sadipscing elitr, sedqw dinoumy eirmod tempor invidunt
-								sedrsu.</p>
-							<a class="read-more" href="#">Read More <i class="lni lni-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ========================= blog-section end ========================= -->
-
-	<!-- ========================= contact-section start ========================= -->
-	<section id="contact" class="team-section pt-150 pb-150">
-		<div class="shape shape-5">
-			<img src="assets/img/shapes/shape-2.svg" alt="">
-		</div>
-		<div class="shape shape-6">
-			<img src="assets/img/shapes/shape-5.svg" alt="">
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-8 mx-auto">
-					<div class="section-title text-center mb-55">
-						<span class="wow fadeInDown" data-wow-delay=".2s">Your Using Free Lite Version of The Template</span>
-						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".4s">Please, purchase full version</h2>
-						<p class="wow fadeInUp" data-wow-delay=".6s">To get all sections and permission to use with commercial projects & footer credit remove <br/></p></br>
-						<a href="https://rebrand.ly/medic-ud" rel="nofollow" class="btn theme-btn">Purchase Now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ========================= contact-section end ========================= -->
 
 	<!-- ========================= footer start ========================= -->
 	<footer class="footer pt-100 img-bg" style="background-image:url('assets/img/bg/footer-bg.jpg');">
@@ -793,55 +593,12 @@
 							<p>Lorem ipsum dolor serit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 								labore dolore magna
 								aliquyam erat diam voluptua.</p>
-							<div class="footer-social-links">
-								<ul>
-									<li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-									<li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-									<li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-									<li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-6">
-						<div class="footer-widget mb-30">
-							<h4>Quick Link</h4>
-							<ul class="footer-links">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Doctor</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-3 col-md-5">
-						<div class="footer-widget mb-30">
-							<h4>Quick Link</h4>
-							<ul class="footer-links">
-								<li><a href="#">Cardiology</a></li>
-								<li><a href="#">Neurology</a></li>
-								<li><a href="#">Gastroenterology</a></li>
-								<li><a href="#">Routine Checkup</a></li>
-								<li><a href="#">Orthopedics</a></li>
-								<li><a href="#">Dental Surgery</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xl-4 col-lg-12 col-md-7">
-						<div class="footer-widget mb-30">
-							<h4>Medical Location</h4>
-							<div class="map-canvas">
-								<iframe class="map" id="gmap_canvas"
-									src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="copyright-area">
-				<p class="mb-0 text-center">Designed and Developed By <a href="https://uideck.com/" rel="nofollow">UIdeck</a></p>
+				<p class="mb-0 text-center">©2020 OneBitHealth. Todos os direitos reservados</a></p>
 			</div>
 		</div>
 	</footer>
@@ -850,14 +607,7 @@
 
 	<!-- ========================= scroll-top ========================= -->
 	<a href="#" class="scroll-top">
-		<i class="lni lni-arrow-up"></i>
+		<%= image_tag("up-arrow.png", alt: "Ir para cima.") %>
 	</a>
-
-	<!-- ========================= JS here ========================= -->
-	<script src="assets/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/tiny-slider.js"></script>
-	<script src="assets/js/main.js"></script>
 </body>
-
 </html>
