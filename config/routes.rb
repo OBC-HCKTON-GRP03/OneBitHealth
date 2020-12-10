@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   end
   root 'home#index'
   get 'home', to: 'home#index'
+  get 'fatal_test', to: 'errors#fatal_test'
+  get 'error_test', to: 'errors#error_test'
+
+  match '*path', to: 'errors#not_found', via: :all
 
   devise_for :users
 
