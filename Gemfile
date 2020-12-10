@@ -22,6 +22,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'cucumber-rails', '~> 2.2', require: false
+  gem 'factory_bot_rails', '~> 6.1'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+  gem 'shoulda-matchers', '~> 4.4', '>= 4.4.1'
+end
+
+group :test do
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 group :development do
