@@ -1,0 +1,76 @@
+/* Header */
+
+.header_auth {
+	border-top: 8px solid var(--color-primary);
+	#link-img-header{
+		margin-top: -20px;
+		margin-left: auto;
+    margin-right: auto;
+		.img-logo-auth {
+			height: 100px;
+			width: 194px;
+		}
+	}
+
+	.description-page{
+		font-family: opensans-light,helvetica,arial,sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-top: -40px;
+    line-height: 1.33;
+    display: block;
+    padding: 16px 0 26px;
+	}
+}
+
+.link-input{
+	text-align: center;
+	margin-top: 10px;
+	.forgot-password{
+		color: var(--color-primary);
+	}
+	.forgot-password:hover{
+		color: #25B26F;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.forgot-email{
+		color: var(--color-primary);
+	}
+	.forgot-email:hover{
+		color: #25B26F;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.form-control{
+}
+
+.submit_auth{
+	color: var(--color-primary);
+	font-weight: bold;
+}
+
+.submit_auth:hover{
+	color: #25B26F;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.button-submit-auth-entry{
+	background-color: var(--color-primary);
+	font-weight: bold;
+}
+
+.button-submit-auth-entry:hover{
+	background-color: #25B26F ;
+	font-weight: bold;
+}
+
+form{
+	label{
+		color: var(--gray-inputs-legends);
+	}
+}

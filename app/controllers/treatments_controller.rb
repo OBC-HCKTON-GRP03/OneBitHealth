@@ -2,7 +2,7 @@ class TreatmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_appointment
   before_action :set_treatment, only: %i[show edit update destroy]
-
+  layout "dashboard"
   # GET /treatments
   # GET /treatments.json
   def index

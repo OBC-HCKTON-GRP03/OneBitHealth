@@ -4,6 +4,7 @@ class ExamsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_appointment
   before_action :set_exam, only: %i[show edit update destroy]
+  layout "dashboard"
 
   # GET /appintment/:appoint_id/exams
   def index

@@ -20,3 +20,4 @@ import $ from "jquery"
 
 import "bootstrap"
 import "../stylesheets/application"
+import "../menu_dashboard.js"
