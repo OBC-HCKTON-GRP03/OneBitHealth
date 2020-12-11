@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_203820) do
+ActiveRecord::Schema.define(version: 2020_12_11_141240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_12_09_203820) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["appointment_id"], name: "index_exams_on_appointment_id"
+  end
+
+  create_table "shared_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "i_share_with_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["i_share_with_id"], name: "index_shared_users_on_i_share_with_id"
+    t.index ["user_id", "i_share_with_id"], name: "index_shared_users_on_user_id_and_i_share_with_id", unique: true
+    t.index ["user_id"], name: "index_shared_users_on_user_id"
   end
 
   create_table "treatments", force: :cascade do |t|

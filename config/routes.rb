@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :treatments
   end
   
-  root 'home#index'
   get 'home', to: 'home#index'
   get 'fatal_test', to: 'errors#fatal_test'
   get 'error_test', to: 'errors#error_test'
