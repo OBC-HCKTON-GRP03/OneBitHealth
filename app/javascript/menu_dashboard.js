@@ -13,7 +13,7 @@
       $('#sidebar').toggleClass('active');
       
       if(contraid){
-      	$('.img-logo-auth').attr("src","/assets/logotipo_mod.svg");
+      	$('.img-logo-auth').attr("src","/assets/logotipo_mod.svg"); // implement other image
       	contraid = false;
       	event.preventDefault();
       }else{
