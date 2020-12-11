@@ -6,10 +6,10 @@ pt-BR:
       retrurn_link: Retorna ao Home。
       403:
         summary: Sem permição de acesso
-        description: Não tem permição para acessar essa pagina.
+        description: Não tem permição para acessar essa pagina
       404:
         summary: "Oops! Pagina não encontrada"
-        description: Não foi possivel mostrar a pagina procurada.
+        description: Não foi possivel mostrar a pagina procurada
       500:
         summary: Erro no lado do servidor.
-        description: Aguarde um pouco e tente novamente.
+        description: Aguarde um pouco e tente novamente

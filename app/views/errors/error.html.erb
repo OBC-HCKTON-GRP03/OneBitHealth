@@ -10,9 +10,11 @@
       <h3 style="margin-top: 100px;">
         <p><%= t("common.errors_hanlder.#{@status_code}.summary") %></p>
       </h3>
-      <div style="margin-top: 150px;">
-        <%= t("common.errors_hanlder.#{@status_code}.description") %>
-        <p><%= link_to t('common.errors_hanlder.retrurn_link'), root_path %></p>
+      <div style="margin-top: 100px;">
+        <h5>
+          <%= t("common.errors_hanlder.#{@status_code}.description") %>
+        </h5>
+        <%= link_to t('common.errors_hanlder.retrurn_link'), root_path, class:"btn btn-block mt-4 text-white", style:"background-color: #00ADB5;" %>
       </div>
     </div>
   </div>
