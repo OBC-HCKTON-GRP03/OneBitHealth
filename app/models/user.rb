@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   # Active Record Associations
   has_many :appointments, dependent: :destroy
+  has_many :exams, through: :appointments
+  has_many :treatments, through: :appointments
 end
