@@ -8,4 +8,11 @@
 	*{
 		overflow-x: hidden;
 	}
+
+	#sidebar{
+		min-width: 100%;
+		&.active{
+  		display: none;
+  	}
+	}
 }
