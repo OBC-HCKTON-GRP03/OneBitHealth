@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   end
   
   get 'home', to: 'home#index'
-  get 'fatal_test', to: 'errors#fatal_test'
-  get 'error_test', to: 'errors#error_test'
+  # get 'fatal_test', to: 'errors#fatal_test'
+  # get 'error_test', to: 'errors#error_test'
 
-  match '*path', to: 'errors#not_found', via: :all
+  # match '*path', to: 'errors#not_found', via: :all
 
   get '/dashboard', to: 'dashboard#index'
 

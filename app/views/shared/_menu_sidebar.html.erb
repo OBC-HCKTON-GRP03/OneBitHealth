@@ -1,10 +1,10 @@
 <nav id="sidebar" class=" active">
-  <a href="/" class="logo">
+  <a href="/dashboard" class="logo">
     <%= image_tag("logotipo_onebit_health_black.svg", alt: "Logo oneBitHealth", class: "img-logo-auth") %>
   </a>
   <div class="menu_dashboard_links">
     <div class="list-group list-unstyled components mb-5">
-      <%= link_to "Meu Histórico", "/appointments", class: "list-group-item list-group-item-action active" %>
+      <%= link_to "Meu Histórico", appointments_path , method: :get, class: "list-group-item list-group-item-action active" %>
       <%= link_to "Históricos Compartilhados", "/users/sign_in", class: "list-group-item list-group-item-action active" %>    
       <%= link_to "Compartilhar Meu histórico", "/users/sign_in", class: "list-group-item list-group-item-action active" %>  
     </div>
