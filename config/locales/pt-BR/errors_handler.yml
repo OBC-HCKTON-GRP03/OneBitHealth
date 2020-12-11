@@ -1,15 +1,15 @@
 pt-BR:
   common:
     errors_hanlder:
-      title: "%{status_code} Erro de Pagina"
+      title: "Error Page"
       stator_code: "%{status_code}"
       retrurn_link: Retorna ao Home。
       403:
-        summary: Sem permição
+        summary: Sem permição de acesso
         description: Não tem permição para acessar essa pagina.
       404:
-        summary: Error Page
-        description: Pagina não encontrada.
+        summary: "Oops! Pagina não encontrada"
+        description: Não foi possivel mostrar a pagina procurada.
       500:
         summary: Erro no lado do servidor.
         description: Aguarde um pouco e tente novamente.

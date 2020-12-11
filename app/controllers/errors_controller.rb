@@ -1,6 +1,6 @@
 class ErrorsController < ApplicationController
   protect_from_forgery except: [:not_found]
-  skip_before_action :require_login, only: [:fatal_test, :error_test]
+  # skip_before_action :require_login, only: [:fatal_test, :error_test]
 
   def not_found
     rescue_404(ActionController::RoutingError.new("No route matches #{request.request_method} #{request.path}"))
