@@ -19,11 +19,16 @@
 								<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 									<ul id="nav" class="navbar-nav ml-auto">
 										<li class="nav-item">
-											<%= link_to "Minha Conta", "/users/sign_in", class: "page-scroll active" %>
+											<%= link_to "Minha Conta", dashboard_path , class: "page-scroll active" %>
 										</li>
 										<li class="nav-item">
 											<%= link_to "Cadastrar", "/users/sign_up", class: "page-scroll active" %>
 										</li>
+ 										<% if user_signed_in? %>
+ 											<li class="nav-item">
+												<%= link_to "Sair", destroy_user_session_path , method: :delete  , class: "page-scroll active" %>
+											</li>
+										<% end %> 
 									</ul>
 								</div>
 							</nav>
