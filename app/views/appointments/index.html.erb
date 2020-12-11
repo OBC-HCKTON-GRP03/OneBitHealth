@@ -2,7 +2,11 @@
 
 <h1>Appointments</h1>
 
-<table class="table table-striped">
+<table class="table table-striped" 
+  data-toggle="table"
+  data-search="true"
+  data-strict-search="true"
+  >
   <thead>
     <tr>
       <th>Title</th>
@@ -24,7 +28,7 @@
       <td><%= appointment.user_id %></td>
       <td><%= link_to 'Show', appointment %></td>
       <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-      <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
     </tr>
     <% end %>
   </tbody>

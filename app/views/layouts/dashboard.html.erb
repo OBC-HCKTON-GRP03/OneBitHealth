@@ -12,21 +12,30 @@
   </head>
   
   <body>
-
     <div class="wrapper d-flex align-items-stretch">
-      <%= render partial: "shared/menu_sidebar" %>
-      
-      <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-        <%= render partial: "shared/header_dashboard" %>
-        
-        <%= yield %>
-
-        <%= render partial: "shared/footer" %>
+        <%= render partial: "shared/menu_sidebar" %>
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 mb-5">
+          <div class="row mb-5">
+            <div class="col-12">
+              <%= render partial: "shared/header_dashboard" %>
+            </div>
+          </div>
+   
+          <div class="row mt-5">
+            <div class="col-12">
+              <%= yield %>
+            </div>
+          </div>
+   
+          <div class="row">
+            <div class="col-12">
+              <%= render partial: "shared/footer" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  
   </body>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>
-   
