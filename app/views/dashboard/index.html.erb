@@ -5,56 +5,56 @@
       <table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col"><a href="/appointments">Consultas</a></th>
-			    </tr>
-			  </thead>
-			  <tbody>
-          <% @appointments.each do |appointment| %>
-			     <tr>
-            <td>
-              <%= appointment.title %>
-            </td>   
-           </tr>
-          <% end %>
-			  </tbody>
+			      <th scope="col"><%= link_to 'Consultas', appointments_path  %></th>
+					</tr>
+				</thead>
+				<% if @appointments.present? %>
+					<tbody>
+						<% @appointments.each do |appointment| %>
+						<tr>
+							<td><%= appointment.title %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				<% end %>
 			</table>
 		</div>
 
 		<div class='col-xl-4 col-sm-4 col-md-4'>
-      <table class="table table-striped">
-  			<thead>
-  			  <tr>
-  			    <th scope="col">Exames</th>
-  			  </tr>
-  			</thead>
-        <tbody>
-          <% @exams.each do |exam| %>
-           <tr>
-            <td>
-              <%= exam.title %>
-            </td>   
-           </tr>
-          <% end %>
-        </tbody>
+    	<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Exames</th>
+					</tr>
+				</thead>
+				<% if @exams.present? %>
+					<tbody>
+						<% @exams.each do |exam| %>
+						<tr>
+							<td><%= exam.title %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				<% end %>
 			</table>
     </div>
 
 		<div class='col-xl-4 col-sm-4 col-md-4'>     	
-			<table class="table table-striped">
-  			<thead>
-  			  <tr>
-  			    <th scope="col">Tratamentos</th>
-  			  </tr>
-  			</thead>
-        <tbody>
-          <% @treatments.each do |treatment| %>
-           <tr>
-            <td>
-              <%= treatments.title %>
-            </td>   
-           </tr>
-          <% end %>
-        </tbody>
+    	<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Tratamentos</th>
+					</tr>
+				</thead>
+				<% if @treatments.present? %>
+					<tbody>
+						<% @treatments.each do |treatment| %>
+						<tr>
+							<td><%= treatment.title %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				<% end %>
 			</table>
   	</div>
     

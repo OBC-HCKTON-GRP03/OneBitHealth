@@ -1,10 +1,10 @@
 class DashboardController < ApplicationController
 	before_action :authenticate_user! 
 	layout "dashboard"
-	
+
 	def index
-		@appointments = Appointment.order(updated_at: :desc).where(user_id: current_user.id).take(3)
-		@exams = Exam.order(updated_at: :desc).where(appointment_id: @appointments).take(3)
-		@treatments = Treatment.order(updated_at: :desc).where(appointment_id: @appointments).take(3)
+		@appointments = current_user.appointments.order(appointment_date: :desc).limit(3)
+		@exams = current_user.exams.order(exam_date: :desc).limit(3)
+		@treatments = current_user.treatments.order(treatment_date: :desc).limit(3)
 	end
 end
