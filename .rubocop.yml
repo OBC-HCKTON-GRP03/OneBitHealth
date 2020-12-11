@@ -1,2 +1,5 @@
-require: rubocop-rails
-require: rubocop-rspec
+require: 
+  - rubocop-performance
+  - rubocop-rails
+  - rucocop-rspec
+  
