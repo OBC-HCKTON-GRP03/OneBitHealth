@@ -1,35 +1,59 @@
-<div class="container">
-  <div class="my-5 row justify-content-md-center">
-    <h2 class="text-secondary">Acessar sua conta</h2>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col-5">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group form-group text-secondary">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"  %>
-        </div>
+<header class="header_auth text-center">
+    <div class="row">
+      <%= link_to image_tag("logo_inicial_teste.svg", alt: "Logo oneBitHealth", class:'rounded mx-auto img-logo-auth' ), '/', :id => 'link-img-header' %>
+    </div>
+    <div class="row">
+      <h3 class="col-12 description-page">Acessar sua conta</h3>
+    </div>
+</header>
 
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group form-check">
-            <%= f.check_box :remember_me, class: "form-check-input" %>
-            <%= f.label :remember_me, class: "form-check-label" %>
+<main>
+  <div class="container">
+    <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
+      <div class="col-lg-4">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-row">
+            <div class="form-group w-100">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded-bottom border-bottom-2 form-control", placeholder:"" %>
+              <div class="link-input">
+                <%= link_to "Esqueceu sua email?", "/", class: "forgot-email" %>
+              </div>
+            </div>
           </div>
+        
+          <div class="form-row">
+            <div class="form-group w-100">
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "rounded-bottom border-bottom-5 form-control", placeholder: "" %>
+              <div class="link-input">
+                <%= link_to "Esqueceu sua senha?", "/users/password/new", class: "forgot-password" %>
+              </div>
+            </div>
+          </div>
+        
+          <div class='form-row'>
+            <% if devise_mapping.rememberable? %>
+              <div class="form-group form-check">
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :remember_me, class: "form-check-label" %>
+              </div>
+            <% end %>
+          </div>
+        
+          <div class="form-row">
+            <%= f.submit "Entrar", class: "text-uppercase btn btn-lg btn-primary col-12 button-submit-auth-entry" %>
+          </div>
+        
+          <div class="form-row">
+            <div class="text-center mt-2">
+              <p class="fs-6 lh-sm"> Não possui cadastro?<%= link_to " cadastre-se.", "/users/sign_up", class: "text-uppercase submit_auth" %></p> 
+            </div>
+          </div>      
         <% end %>
-
-        <div class="actions">
-          <%= f.submit "Entrar", class: "col btn-lg btn-primary" %>
-        </div>
-
-        <div class="my-4 text-center">
-          <p class="text-secondary">Não tem uma conta? <%= render "devise/shared/links"%></p>
-        </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+</main>
+
+

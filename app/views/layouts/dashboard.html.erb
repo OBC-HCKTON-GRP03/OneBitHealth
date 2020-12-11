@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OneBitHealth</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon_logotipo_inicial_teste.png'%>    
+  </head>
+  
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+        <%= render partial: "shared/menu_sidebar" %>
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 mb-5">
+          <div class="row mb-5">
+            <div class="col-12">
+              <%= render partial: "shared/header_dashboard" %>
+            </div>
+          </div>
+   
+          <div class="row mt-5">
+            <div class="col-12">
+              <%= yield %>
+            </div>
+          </div>
+   
+          <div class="row">
+            <div class="col-12">
+              <%= render partial: "shared/footer" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</html>
