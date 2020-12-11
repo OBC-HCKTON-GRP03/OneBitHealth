@@ -9,11 +9,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env.development? && User.count.zero?
-  User.create!(email: 'admin@admin.com', password: '123456', password_confirmation: '123456')
-  User.create!(email: 'default@admin.com', password: '123456', password_confirmation: '123456')
-  last_id = User.last.id + 1
+  User.create!(name: 'Admin', email: 'admin@admin.com', password: '123456', password_confirmation: '123456')
+  User.create!(name: 'Default', email: 'default@admin.com', password: '123456', password_confirmation: '123456')
+
+  last_id = User.exists? ? User.last.id + 1 : 1
+
   8.times do
-    User.create!(email: "#{last_id}@default.com", password: '123456', password_confirmation: '123456')
+    User.create!(name: "Default #{last_id}", email: "#{last_id}@default.com", password: '123456', password_confirmation: '123456')
     last_id += 1
   end
 end
