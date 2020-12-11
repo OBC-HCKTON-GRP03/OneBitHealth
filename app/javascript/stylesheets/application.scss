@@ -3,3 +3,9 @@
 @import "globals.scss";
 @import "session_styles.scss";
 @import "menu_sidebar.scss";
+
+@include media-breakpoint-down(sm) { 
+	*{
+		overflow-x: hidden;
+	}
+}
