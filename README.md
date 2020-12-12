@@ -24,12 +24,22 @@ Things you may want to cover:
 
 * Database creation  
 
-    `$ rails db:create`
+  `$ rails db:create`
 
-* Database initialization
+* Database initialization  
+
   `$ rails db:migrate`
 
-* How to run the test suite
+* How to run the test suite  
+
+  * To run the RSpec tests:  
+  
+    `$ bundle exec rspec`
+
+  * To run the Cucumber acceptance tests:
+  
+    `$ bundle exec cucumber`
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
