@@ -8,8 +8,8 @@
 </header>
 
 <main>
-  <div class="container">
-    <div class="d-flex justify-content-center  col-sm-12 col-md-10 col-lg">
+  <div class="container ">
+    <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
         <div class="col-lg-4">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
@@ -43,7 +43,7 @@
           </div>
 
           <div class="form-row">
-            <%= f.submit "Cadastrar", class: "text-uppercase btn btn-lg btn-primary col-12 button-submit-auth-entry" %>
+            <%= f.submit "Cadastrar", class: "text-uppercase btn btn-lg col-12 button-submit-auth-entry" %>
           </div>
 
           <div class="form-row">
