@@ -1,15 +1,15 @@
-<%= simple_form_for(@appointment) do |f| %>
-<%= f.error_notification %>
-<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for @appointment, defaults: { input_html: { class: 'form-control' } } do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div class="form-inputs">
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :professional_name %>
-  <%= f.datetime_field :appointment_date %>
-</div>
+  <div class="form-group">
+    <%= f.input :title, label: 'Título' %>
+    <%= f.input :description, label: 'Descrição' %>
+    <%= f.input :professional_name, label: 'Profissional' %>
+    <%= f.datetime_field :appointment_date, label: 'Data' %>
+  </div>
 
-<div class="form-actions">
-  <%= f.button :submit %>
-</div>
+  <div class="form-inputs">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
 <% end %>
