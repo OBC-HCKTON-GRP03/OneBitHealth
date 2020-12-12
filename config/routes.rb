@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   
   get '/dashboard', to: 'dashboard#index'
+  get 'shared_history', to: 'dashboard#users_sharing_with_me'
   
   devise_for :users
   get '/user' => 'dashboard#index', :as => :user_root
