@@ -7,14 +7,6 @@ body{
 	color: lighten($black,50%);
 }
 
-button {
-	transition: .3s all ease;
-	&:hover, &:focus {
-		text-decoration: none !important;
-		outline: none !important;
-		box-shadow: none !important;
-	}
-}
 
 .ftco-section{
 	padding: 7em 0;
@@ -196,17 +188,6 @@ a[data-toggle="collapse"] {
   transition: all 0.3s;
 }
 
-
-.btn{
-	&.btn-primary{
-		background: $primary;
-		border-color: $primary;
-		&:hover, &:focus{
-			background: $primary !important;
-			border-color: $primary !important;
-		}
-	}
-}
 
 
 
