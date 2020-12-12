@@ -3,30 +3,28 @@
     <div class="card">
       <input type="checkbox" id="bgtoggle" class="toggle" />
       <label for="bgtoggle" class="menu"></label>
-      
-      <ul class="menu_container">
-        <li>Note</li>
-        <li>Edit</li>
-        <li>Delete</li>
-      </ul> 
+      <!-- We can implement other information in the top menu. -->
+ <!--      <ul class="menu_container">
+ 
+      </ul>  -->
       
       <div class="contents">
         <div class="container-fluid">
           <div class="row mb-3">
-            <h5 class="attribute_camp mr-4">Título:</h5> <span class="attribute_value"><%= @appointment.title %></span>
+            <h5 class="attribute_camp mr-4">Título :</h5> <span class="attribute_value"><%= @appointment.title %></span>
           </div>
 
           <div class="row mb-3">
-            <h5 class="attribute_camp mr-4">Nome do Profissional:</h5> <span class="attribute_value"><%= @appointment.professional_name %></span>
+            <h5 class="attribute_camp mr-4">Nome do Profissional :</h5> <span class="attribute_value"><%= @appointment.professional_name %></span>
           </div>
           
           <div class="row mb-3">
-            <h5 class="attribute_camp mr-4">Data de Consulta:</h5> <span class="attribute_value"><%= @appointment.appointment_date.strftime('%d/%m/%y') %></span>
+            <h5 class="attribute_camp mr-4">Data de Consulta :</h5> <span class="attribute_value"><%= @appointment.appointment_date.strftime('%d/%m/%y') %></span>
           </div>
           
           <div class="row mb-3">
             <% if @appointment.exams.any? %>
-              <h5 class="attribute_camp mr-4">Exames associados:</h5>
+              <h5 class="attribute_camp mr-4">Exames associados :</h5>
               
               <% for exam in @appointment.exams %>
                 <ul>
@@ -49,16 +47,13 @@
             <% end %>
           </div>
 
-          <div class="row mb-5">
-            <ul class="list-group">
-
-              <li class="list-item btn mb-2 text-left"><%= link_to 'Edit', edit_appointment_path(@appointment) %></li>
-              <li class="list-item btn mb-2 text-left"><%= link_to 'Add Exam', appointment_exams_path(@appointment) %></li>
-              <li class="list-item btn mb-2 text-left"><%= link_to 'Add Treatment', appointment_treatments_path(@appointment) %> </li>
-              <li class="list-item btn mb-2 text-left"><%= link_to 'Back', appointments_path %></li>
-            
-            </ul>
+          <div class="row mb-5 interactive_button">
+            <%= link_to 'Editar', edit_appointment_path(@appointment), class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+            <%= link_to 'Adicionar Exame', appointment_exams_path(@appointment), class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left"%>
+            <%= link_to 'Adicionar Tratamento', appointment_treatments_path(@appointment), class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
+            <%= link_to 'Voltar ao Hitórico', appointments_path, class:"btn-info button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
           </div>
+
         </div>
       </div>
     </div>
