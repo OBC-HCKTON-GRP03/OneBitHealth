@@ -1,0 +1,24 @@
+    <% if results.count > 0 %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col-md-3">Título</th>
+            <th scope="col-md-3">Data</th>
+            <th scope="col-md-3">Profissional</th>
+            <th scope="col-md-3">Estabelecimento</th>
+          </tr>
+        </thead>
+          <tbody>
+            <% results.each do |result| %>
+              <tr>
+                <td><%= result['title'] %></td>
+                <td><%= result['date'].to_time.strftime('%d/%m/%Y') %></td>
+                <td><%= result['professional'] %></td>
+                <td><%= result['establishment'] %></td>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+    <% else %>
+      <h4>Consulta não retornou nenhum registro.</h4>
+    <% end %>

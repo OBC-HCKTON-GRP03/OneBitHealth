@@ -1,12 +1,22 @@
-<nav id="sidebar" class=" active">
-  <a href="/" class="logo">
+<nav id="sidebar" class="shadow-lg active">
+  <a href="#" class="logo", id="logo">
     <%= image_tag("logotipo_onebit_health_black.svg", alt: "Logo oneBitHealth", class: "img-logo-auth") %>
   </a>
   <div class="menu_dashboard_links">
     <div class="list-group list-unstyled components mb-5">
-      <%= link_to "Meu Histórico", "/appointments", class: "list-group-item list-group-item-action active" %>
-      <%= link_to "Históricos Compartilhados", "/users/sign_in", class: "list-group-item list-group-item-action active" %>    
-      <%= link_to "Compartilhar Meu histórico", "/users/sign_in", class: "list-group-item list-group-item-action active" %>  
+
+      <a href="/appointments" class="list-group-item list-group-item-action my_history rounded-0 border-left-0 border-bottom-0 border-top-5 border-right-5 border-dark">
+        <%= image_tag("icon_my_history.svg", alt: "my history icon", id:"my_history") %>
+      </a>
+
+      <a href="/" class="d-flex flex-row list-group-item list-group-item-action histories_shares rounded-0 border-top-0 border-bottom-0 border-left-0 border-right-5 border-dark">
+        <%= image_tag("icon_histories_share.svg", alt: "my history icon", id:"histories_shares") %>
+      </a>      
+
+      <button  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="list-group-item list-group-item-action share_history rounded-0 border-top-0 border-left-0 border-bottom-0 border-right-5 border-dark">
+        <%= image_tag("icon_share_history.svg", alt: "my history icon", id:"share_history") %>
+      </button>
+
     </div>
   </div>
 </nav>

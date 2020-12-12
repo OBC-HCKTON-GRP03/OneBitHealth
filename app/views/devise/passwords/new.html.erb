@@ -1,16 +1,32 @@
-<h2>Forgot your password?</h2>
+<header class="header_auth text-center">
+    <div class="row">
+      <%= link_to image_tag("logo_inicial_teste.svg", alt: "Logo oneBitHealth", class:'rounded mx-auto img-logo-auth' ), '/', :id => 'link-img-header' %>
+    </div>
+    <div class="row">
+      <h3 class="col-12 description-page mt-1">Esqueceu sua senha?</h3>
+    </div>
+</header>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+<main>
+  <div class="container">
+    <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+         <div class="form-row">
+            <div class="form-group w-100">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded-bottom border-bottom-2 form-control", placeholder:"Digite seu email" %>
+            </div>
+          </div>
+        <div class="form-row">
+          <%= f.submit "Enviar", class: "text-uppercase btn btn-lg btn-primary col-12 button-submit-auth-entry" %>
+        </div>
+          <div class="form-row">
+            <div class="text-center mt-2">
+              <p class="fs-6 lh-sm"> Não possui cadastro?<%= link_to " cadastre-se.", "/users/sign_up", class: "text-uppercase submit_auth" %></p> 
+            </div>
+          </div>      
+      <% end %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-  </div>
-<% end %><br />
-
-<%= render "devise/shared/links" %>
+</main>

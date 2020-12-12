@@ -3,13 +3,13 @@
       <%= link_to image_tag("logo_inicial_teste.svg", alt: "Logo oneBitHealth", class:'rounded mx-auto img-logo-auth' ), '/', :id => 'link-img-header' %>
     </div>
     <div class="row">
-      <h3 class="col-12 description-page">Criar sua conta</h3>
+      <h3 class="col-12 description-page mt-1">Criar sua conta</h3>
     </div>
 </header>
 
 <main>
   <div class="container">
-    <div class="d-flex justify-content-center  col-sm-12 col-md-10 col-lg">
+    <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
         <div class="col-lg-4">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
@@ -43,7 +43,7 @@
           </div>
 
           <div class="form-row">
-            <%= f.submit "Cadastrar", class: "text-uppercase btn btn-lg btn-primary col-12 button-submit-auth-entry" %>
+            <%= f.submit "Cadastrar", class: "text-uppercase btn-lg col-12 button-submit-auth-entry" %>
           </div>
 
           <div class="form-row">

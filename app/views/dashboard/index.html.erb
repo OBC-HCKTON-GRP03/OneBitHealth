@@ -1,19 +1,43 @@
 <div class="container-fluid" >
+
+	<!-- Search from -->
+	<div class="col-md-12 mb-5">
+		<div class="card">
+			<div class="card-header">
+				<h4>Busca</h4>
+			</div>
+			<div class="card-body">
+				<%= form_tag dashboard_path, method: :get, remote: true, class: 'form-inline' do %>
+					<div class="form-group col-md-6">
+						<%= text_field_tag 'search', @search, placeholder: 'Busque suas consultas, exames e tratamentos', class: 'form-control col-md-12' %>
+					</div>
+					<div class="form-group">
+						<%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<!-- Search results -->
+	<div id="results" class="row ml-3 mr-3 justify-content-sm-center mb-5"></div>
+
 	<div class='row ml-3 mr-3 justify-content-sm-center'>
   	<div class='col-xl-4 col-sm-4 col-md-4'>
     	
       <table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col"><%= link_to 'Consultas', appointments_path  %></th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Consultas', appointments_path, id:"header_table_appointment"  %></th>
 					</tr>
 				</thead>
 				<% if @appointments.present? %>
 					<tbody>
 						<% @appointments.each do |appointment| %>
-						<tr>
-							<td><%= appointment.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{appointment.title} #{appointment.appointment_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}", appointment_path(appointment), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
@@ -24,15 +48,16 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col">Exames</th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Exames', appointment_exams_path(current_user), id:"header_table_exam" %></th>
 					</tr>
 				</thead>
 				<% if @exams.present? %>
 					<tbody>
 						<% @exams.each do |exam| %>
-						<tr>
-							<td><%= exam.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{exam.title} #{exam.exam_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}",appointment_exam_path(appointment_id: exam.appointment_id, id: exam.id), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
@@ -43,15 +68,17 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col">Tratamentos</th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Tratamentos', appointment_treatments_path(current_user), id:"header_table_treatment"%></th>
 					</tr>
 				</thead>
+				
 				<% if @treatments.present? %>
 					<tbody>
 						<% @treatments.each do |treatment| %>
-						<tr>
-							<td><%= treatment.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{treatment.title} #{treatment.treatment_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}",appointment_treatment_path(appointment_id: treatment.appointment_id, id: treatment.id), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
