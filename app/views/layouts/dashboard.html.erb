@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag 'favicon_logotipo_inicial_teste.png'%>    
+    <%= favicon_link_tag 'favicon_logotipo_inicial_teste.png'%>
   </head>
   
   <body>
@@ -39,4 +39,18 @@
     </div>
   </body>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    @media (max-width: 575.98px) { 
+      *{
+        overflow-x: hidden;
+      }
+
+      #sidebar{
+        min-width: 100%;
+        &.active{
+          display: none;
+        }
+      }
+    }
+  </style>
 </html>
