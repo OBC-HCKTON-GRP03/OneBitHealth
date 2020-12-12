@@ -28,15 +28,16 @@
       <table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col"><%= link_to 'Consultas', appointments_path  %></th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Consultas', appointments_path, id:"header_table_appointment"  %></th>
 					</tr>
 				</thead>
 				<% if @appointments.present? %>
 					<tbody>
 						<% @appointments.each do |appointment| %>
-						<tr>
-							<td><%= appointment.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{appointment.title} #{appointment.appointment_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}", appointment_path(appointment), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
@@ -47,15 +48,16 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col">Exames</th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Exames', appointment_exams_path(current_user), id:"header_table_exam" %></th>
 					</tr>
 				</thead>
 				<% if @exams.present? %>
 					<tbody>
 						<% @exams.each do |exam| %>
-						<tr>
-							<td><%= exam.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{exam.title} #{exam.exam_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}",appointment_exam_path(appointment_id: exam.appointment_id, id: exam.id), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
@@ -66,15 +68,17 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col">Tratamentos</th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Tratamentos', appointment_treatments_path(current_user), id:"header_table_treatment"%></th>
 					</tr>
 				</thead>
+				
 				<% if @treatments.present? %>
 					<tbody>
 						<% @treatments.each do |treatment| %>
-						<tr>
-							<td><%= treatment.title %></td>
-						</tr>
+							<tr>
+								<% @title = "#{treatment.title} #{treatment.treatment_date.strftime('%d/%m')}" %>
+								<td class="text-center"><%= link_to "#{@title}",appointment_treatment_path(appointment_id: treatment.appointment_id, id: treatment.id), class:"text-decoration-none results_tables"%></td>
+							</tr>
 						<% end %>
 					</tbody>
 				<% end %>
