@@ -21,6 +21,10 @@ Then('I should be redirected to user root url') do
   expect(current_url).to eq(user_root_url)
 end
 
+Then('I should be redirected to the dashboard') do
+  expect(current_url).to eq(dashboard_url)
+end
+
 Given('I am a registered user') do
   @registered_user = FactoryBot.create(:user)
 end
@@ -51,12 +55,12 @@ end
 When('I fill in the forgot password form') do
   fill_in 'user_email', with: @registered_user.email
 
-  click_button 'Send me reset password instructions'
+  click_button 'Enviar'
 end
 
 When('I receive an email to reset my password') do
   open_email(@registered_user.email)
-  expect(current_email.subject).to eq('Reset password instructions')
+  expect(current_email.subject).to eq('Instruções de troca de senha')
 
   click_first_link_in_email
 end

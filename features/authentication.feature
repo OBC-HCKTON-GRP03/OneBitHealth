@@ -15,7 +15,7 @@ Feature: Authentication
     And I visit the homepage
     When I click in the Sign In link
     And I fill in the sign in form
-    Then I should be redirected to user root url
+    Then I should be redirected to the dashboard
 
   Scenario: Sign out
     Given I am a registered user
