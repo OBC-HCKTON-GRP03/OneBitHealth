@@ -8,7 +8,8 @@ class DashboardController < ApplicationController
 							a.title as title, 
 							a.appointment_date as date,
 							a.professional_name as professional,
-							'-' as establishment
+							'-' as establishment,
+							'appointments/' || a.id as link
 						FROM
 							appointments a
 						WHERE
@@ -19,7 +20,8 @@ class DashboardController < ApplicationController
 							e.title as title,  
 							e.exam_date as date,
 							'-' as professional,
-							e.establishment_name as establishment
+							e.establishment_name as establishment,
+							'appointments/' || e.appointment_id || '/exams/' || e.id as link
 						FROM 
 							exams e 
 						WHERE
@@ -32,7 +34,8 @@ class DashboardController < ApplicationController
 							t.title as title,  
 							t.treatment_date as date,
 							'-' as professional,
-							t.establishment_name as establishment
+							t.establishment_name as establishment,
+							'appointments/' || t.appointment_id || '/treatments/' || t.id as link
 						FROM 
 							treatments t
 						WHERE

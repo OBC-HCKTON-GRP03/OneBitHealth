@@ -11,10 +11,10 @@
           <tbody>
             <% results.each do |result| %>
               <tr>
-                <td><%= result['title'] %></td>
-                <td><%= result['date'].to_time.strftime('%d/%m/%Y') %></td>
-                <td><%= result['professional'] %></td>
-                <td><%= result['establishment'] %></td>
+                <td><%= link_to result['title'], result['link'], class:"text-decoration-none results_tables" %></td>
+                <td class="text-decoration-none results_tables"><%= result['date'].to_time.strftime('%d/%m/%Y') %></td>
+                <td class="text-decoration-none results_tables"><%= result['professional'] %></td>
+                <td class="text-decoration-none results_tables"><%= result['establishment'] %></td>
               </tr>
               <% end %>
           </tbody>
