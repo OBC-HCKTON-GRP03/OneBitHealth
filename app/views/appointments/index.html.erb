@@ -1,39 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Appointments</h1>
+<div class="tables_standart mb-5">
+  <h1>Consultas</h1>
 
-<table class="table table-striped" 
-  data-toggle="table"
-  data-search="true"
-  data-strict-search="true"
-  >
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Professional name</th>
-      <th>Appointment date</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table class="table table-hover" 
+    data-toggle="table"
+    data-search="true"
+    data-strict-search="true"
+    >
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Nome do Profissional</th>
+        <th>Data da Consulta</th>
+        <th colspan="3" style="background-color: var(--color-primary)"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @appointments.each do |appointment| %>
+        <td ><%= appointment.title %></td>
+        <td ><%= appointment.professional_name %></td>
+        <td ><%= appointment.appointment_date.strftime('%d/%m') %></td>
+        
+        <td>
+          <%= link_to appointment do %>
+            <%= image_tag 'icon_show.svg'%>
+          <% end %>
+        </td>
 
-  <tbody>
-    <% @appointments.each do |appointment| %>
-    <tr>
-      <td><%= appointment.title %></td>
-      <td><%= appointment.description %></td>
-      <td><%= appointment.professional_name %></td>
-      <td><%= appointment.appointment_date %></td>
-      <td><%= appointment.user_id %></td>
-      <td><%= link_to 'Show', appointment %></td>
-      <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-      <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        <td>
+          <%= link_to edit_appointment_path(appointment)  do %>
+            <%= image_tag 'icon_edit.svg'%>
+          <% end %>  
+        </td>
 
-<br>
+        <td>
+          <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' }  do %>
+            <%= image_tag('icon_trash.svg')%>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <button class="button_shape create_instance btn-lg btn-block mt-5">
+    <%= link_to 'Nova consulta', new_appointment_path %>
+  </button>
+</div>
 
-<%= link_to 'New Appointment', new_appointment_path %>
+
+  
