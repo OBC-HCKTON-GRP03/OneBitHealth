@@ -49,12 +49,16 @@ class DashboardController < ApplicationController
 
 			respond_to do |format|
 				format.js
+				return
 			end
 		end
 
 		@appointments = current_user.appointments.order(appointment_date: :desc).limit(3)
 		@exams = current_user.exams.order(exam_date: :desc).limit(3)
 		@treatments = current_user.treatments.order(treatment_date: :desc).limit(3)
+		@users = User.find_by_sql("select * from users where id !=#{current_user.id} and id not in (select
+          i_share_with_id from shared_users where user_id=#{current_user.id})")
+
 		
 		respond_to do |format|
 			format.html
