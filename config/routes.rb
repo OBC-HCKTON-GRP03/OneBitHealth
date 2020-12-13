@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :shared_users, only: %i[destroy create]
 
+  # rotas para reset password
+  resource :passwords, only: [:create, :update]
+
   devise_for :users
   get '/user' => 'dashboard#index', :as => :user_root
 
