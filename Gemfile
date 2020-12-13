@@ -51,3 +51,5 @@ gem 'simple_form', '~> 5.0'
 gem 'rubocop-rails', '~> 2.9', require: false
 
 gem 'rubocop-rspec', '~> 2.0', require: false
+
+gem "carrierwave", "~> 2.1"

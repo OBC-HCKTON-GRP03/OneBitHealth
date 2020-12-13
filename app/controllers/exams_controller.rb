@@ -72,7 +72,7 @@ class ExamsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exam_params
-    params.require(:exam).permit(:title, :description, :establishment_name, :exam_date, :appointment_id)
+    params.require(:exam).permit(:title, :description, :establishment_name, :exam_date, :appointment_id, {documents: []})
   end
 
   def get_appointment
