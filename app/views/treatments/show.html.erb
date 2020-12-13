@@ -1,38 +1,56 @@
+<!--
+  Detalhes do Tratamento 
+  Tabela com detalhes rápidos sobre o tratamento Título Data Local do Tratamento
+  Botão para editar o tratamento 
+  Botão para deletar o exame
+  Extra => botão de voltar 
+-->
 <p id="notice">
   <%= notice %>
 </p>
+<div class="container-fluid show_card">
+  <div class="cards">
+    <div class="card">
+      <input type="checkbox" id="bgtoggle" class="toggle" />
+      <label for="bgtoggle" class="menu"></label>
+      
+      <!-- Data the appointments -->
+      
+      <div class="contents">
+        <div class="container-fluid">
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Título :</h5> <span class="attribute_value">
+              <%= @treatment.title %>
+            </span>
+          </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @treatment.title %>
-</p>
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Data de Tratamento :</h5> <span class="attribute_value">
+              <%= @treatment.treatment_date.strftime('%d/%m/%y') %>
+            </span>
+          </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @treatment.description %>
-</p>
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Local de Tratamento :</h5> <span class="attribute_value">
+              <%= @treatment.establishment_name %>
+            </span>
+          </div>
 
-<p>
-  <strong>Establishment name:</strong>
-  <%= @treatment.establishment_name %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @treatment.kind %>
-</p>
-
-<p>
-  <strong>Treatment date:</strong>
-  <%= @treatment.treatment_date %>
-</p>
-
-<p>
-  <strong>Appointment:</strong>
-  <%= @treatment.appointment_id %>
-</p>
-<% unless @appointment !=current_user %>
-
-  <%= link_to 'Edit' , edit_appointment_treatment_path(@appointment, @treatment) %> |
-    <%= link_to 'Back' , appointment_treatments_path(@appointment) %>
-      <% end %>
+          <% unless @treatment.appointment_id != current_user.id %>
+            <div class="row mt-5 interactive_button">
+              
+              <%= link_to 'Editar' , edit_appointment_treatment_path(@appointment, @treatment), 
+                class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+              
+              <%= link_to 'Remover Tratamento', [@appointment, @treatment], method: :delete, data: { confirm: 'Você tem certeza?' }, 
+                class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+              
+              <%= link_to 'Voltar a Consulta' , appointment_path(@appointment), 
+              class:"btn-info button_style_horizontal btn mb-4 btn-sm btn-block text-left"  %>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

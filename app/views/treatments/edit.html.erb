@@ -6,7 +6,7 @@
 					<h1 class="text-center">Editar Consulta</h1>
 					<%= render 'form', treatment: @treatment %>
 					<%= link_to 'Visualizar tratamentos', [@appointment,@treatment], class:"btn-info button_style_horizontal btn mb-4 text-left" %>
-					<%= link_to 'Voltar', appointment_treatments_path(@appointment), class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+					<%= link_to 'Voltar', appointment_path(@appointment), class:"btn-info button_style_horizontal btn mb-4 text-left" %>
 				</div>
 			</div>
 		</div>

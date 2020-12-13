@@ -1,3 +1,6 @@
+<p id="notice">
+  <%= notice %>
+</p>
 <div class="container-fluid show_card">
   <div class="cards">
     <div class="card">
@@ -35,10 +38,8 @@
                     <%= link_to "#{exam.title}" , [@appointment, exam] %>
                   </td>
                 </ul>
-                <% end %>
-
-                  <% end %>
-
+              <% end %>
+            <% end %>
           </div>
 
           <div class="row mb-2">
@@ -50,26 +51,26 @@
                     <%= link_to "#{treatment.title}" , [@appointment, treatment] %>
                   </td>
                 </ul>
-                <% end %>
-                  <% end %>
+              <% end %>
+            <% end %>
           </div>
+          <% unless current_user !=@appointment.user %>
+            <div class="row mb-5 interactive_button">
+              <%= link_to 'Editar' , edit_appointment_path(@appointment), 
+              class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+              
+              <%= link_to 'Adicionar Exame' , appointment_exam_path(@appointment), 
+              class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left"%>
 
-          <div class="row mb-5 interactive_button">
-            <% unless current_user !=@appointment.user %>
-
-              <%= link_to 'Editar' , edit_appointment_path(@appointment), class:"button_style_horizontal btn mb-4 btn-sm
-                btn-block text-left" %>
-                <%= link_to 'Adicionar Exame' , appointment_exams_path(@appointment), class:"button_style_horizontal btn
-                  mb-4 btn-lg btn-block text-left"%>
-                  <%= link_to 'Adicionar Tratamento' , appointment_treatments_path(@appointment),
-                    class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
-
-                    <%= link_to 'Voltar ao Hitórico' , appointments_path, class:"btn-info button_style_horizontal btn
-                      mb-4 btn-lg btn-block text-left" %>
-                      <% end %>
-          </div>
-
+              <%= link_to 'Adicionar Tratamento' , new_appointment_treatment_path(@appointment),
+              class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
+              
+              <%= link_to 'Voltar ao Histórico' , appointments_path, 
+              class:"btn-info button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>

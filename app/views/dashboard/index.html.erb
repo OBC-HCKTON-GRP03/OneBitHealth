@@ -48,7 +48,7 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Exames', appointment_exams_path(current_user), id:"header_table_exam" %></th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><span id="header_table_appointment">Exames</span></th>
 					</tr>
 				</thead>
 				<% if @exams.present? %>
@@ -68,7 +68,7 @@
     	<table class="table table-striped">
 			  <thead>
 			    <tr>
-			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><%= link_to 'Tratamentos', appointment_treatments_path(current_user), id:"header_table_treatment"%></th>
+			      <th scope="col" class = "header_tables_dashboard text-center font-weight-bold"><span id="header_table_appointment">Tratamentos</span></th>
 					</tr>
 				</thead>
 				
@@ -84,7 +84,6 @@
 				<% end %>
 			</table>
   	</div>
-    
 	</div>
 </div>
 	
