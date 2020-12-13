@@ -1,41 +1,62 @@
+<!--
+  Tablela com detalhe de todos os dados rápido do exame Título > Data > Local do Exame
+  Botão para editar o exame
+  Botão para deletar o exame
+-->
 <p id="notice">
   <%= notice %>
 </p>
+<div class="container-fluid show_card">
+  <div class="cards">
+    <div class="card">
+      <input type="checkbox" id="bgtoggle" class="toggle" />
+      <label for="bgtoggle" class="menu"></label>
 
-<p>
-  <strong>Title:</strong>
-  <%= @exam.title %>
-</p>
+      <!-- Data the exams -->
+      <div class="contents">
+        <div class="container-fluid">
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Título :</h5> <span class="attribute_value">
+              <%= @exam.title %>
+            </span>
+          </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @exam.description %>
-</p>
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Data de Tratamento :</h5> <span class="attribute_value">
+              <%= @exam.exam_date.strftime('%d/%m/%y') %>
+            </span>
+          </div>
+ 
+           <div class="row mb-3 border-bottom-2 border-success ">
+            <h5 class="attribute_camp mr-4">Local de Tratamento :</h5> <span class="attribute_value">
+              <%= @exam.establishment_name  %>
+            </span>
+          </div>
 
-<p>
-  <strong>Establishment name:</strong>
-  <%= @exam.establishment_name %>
-</p>
+          <div class="row mb-3">
+            <h5 class="attribute_camp mr-4">Documentos :</h5> <span class="attribute_value">
+              <% @exam.documents.each_with_index do |document, index| %>
+                <%= link_to("Anexo #{index + 1} ", document.url, target: '_blank') %>
+                <br/>
+              <% end %>
+            </span>
+          </div>
 
-<p>
-  <strong>Exam date:</strong>
-  <%= @exam.exam_date %>
-</p>
-
-<p>
-  <strong>Appointment:</strong>
-  <%= @exam.appointment_id %>
-</p>
-
-<h4>Documentos</h4>
-<% @exam.documents.each_with_index do |document, index| %>
-  <%= link_to("Anexo #{index + 1} ", document.url, target: '_blank') %>
-  <br/>
-<% end %>
-
-<hr/>
-
-<% unless @appointment.user != current_user %>
-  <%= link_to 'Editar', edit_appointment_exam_path(@appointment, @exam) %> |
-  <%= link_to 'Retornar', appointment_exams_path(@appointment) %>
-<% end %>
+          <% unless @exam.appointment_id != current_user.id %>
+            <div class="row mt-5 interactive_button">
+              
+              <%= link_to 'Editar' , edit_appointment_exam_path(@appointment, @exam), 
+                class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+              
+              <%= link_to 'Remover Exame', [@appointment, @exam], method: :delete, data: { confirm: 'Você tem certeza?' }, 
+                class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+              
+              <%= link_to 'Voltar à Consulta' , appointment_path(@appointment), 
+              class:"btn-info button_style_horizontal btn mb-4 btn-sm btn-block text-left"  %>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
