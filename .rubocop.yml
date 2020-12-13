@@ -1,7 +1,4 @@
-require: 
-  - rubocop-performance
+require:
+  - rubocop-rspec
   - rubocop-rails
-  - rucocop-rspec
-  
-AllCops:
-  NewCops: enable
+  - rubocop-performance

@@ -51,9 +51,12 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 
 gem 'simple_form', '~> 5.0'
 
+gem 'rubocop', require: false
+
 gem 'rubocop-rails', '~> 2.9', require: false
 
 gem 'rubocop-rspec', '~> 2.0', require: false
 
-gem "carrierwave", "~> 2.1"
+gem 'rubocop-performance', require: false
 
+gem "carrierwave", "~> 2.1"
