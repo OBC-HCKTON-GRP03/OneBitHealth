@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <div class="tables_standart mb-5">
   <h1>Consultas</h1>
 
-  <table class="table table-hover" 
-    data-toggle="table"
-    data-search="true"
-    data-strict-search="true"
-    >
+  <table class="table table-hover" data-toggle="table" data-search="true" data-strict-search="true">
     <thead>
       <tr>
         <th>Titulo</th>
@@ -16,38 +14,46 @@
         <th colspan="3" style="background-color: var(--color-primary)"></th>
       </tr>
     </thead>
-  
+
     <tbody>
       <% @appointments.each do |appointment| %>
-        <td ><%= appointment.title %></td>
-        <td ><%= appointment.professional_name %></td>
-        <td ><%= appointment.appointment_date.strftime('%d/%m') %></td>
-        
+        <td>
+          <%= appointment.title %>
+        </td>
+        <td>
+          <%= appointment.professional_name %>
+        </td>
+        <td>
+          <%= appointment.appointment_date.strftime('%d/%m') %>
+        </td>
+
         <td>
           <%= link_to appointment do %>
-            <%= image_tag 'icon_show.svg'%>
-          <% end %>
+            <%= image_tag 'icon_show.svg' %>
+              <% end %>
         </td>
 
-        <td>
-          <%= link_to edit_appointment_path(appointment)  do %>
-            <%= image_tag 'icon_edit.svg'%>
-          <% end %>  
-        </td>
+        <% unless @shared_user%>
+          <td>
+            <%= link_to edit_appointment_path(appointment) do %>
+              <%= image_tag 'icon_edit.svg' %>
+                <% end %>
+          </td>
 
-        <td>
-          <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' }  do %>
-            <%= image_tag('icon_trash.svg')%>
+          <td>
+            <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+              <%= image_tag('icon_trash.svg')%>
+                <% end %>
+          </td>
           <% end %>
-        </td>
-      </tr>
-      <% end %>
+
+            </tr>
+            <% end %>
     </tbody>
   </table>
-  <button class="button_shape create_instance btn-lg btn-block interactive_button mt-5">
-    <%= link_to 'Nova consulta', new_appointment_path %>
-  </button>
+  <% unless @shared_user %>
+    <button class="button_shape create_instance btn-lg btn-block interactive_button mt-5">
+      <%= link_to 'Nova consulta' , new_appointment_path %>
+    </button>
+    <% end %>
 </div>
-
-
-  

@@ -2,13 +2,13 @@
 
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :verify_shared_users
 
   before_action :set_appointment, only: %i[show edit update destroy]
-  layout "dashboard"
+  layout 'dashboard'
   # GET /appointments
-  # GET /appointments.json
   def index
-    @appointments = Appointment.all
+    @appointments = get_user.appointments
   end
 
   # GET /appointments/1
@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/new
   def new
-    @appointment = Appointment.new
+    @appointment = get_user.appointments.build
   end
 
   # GET /appointments/1/edit
@@ -26,8 +26,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params)
-    @appointment.user_id = current_user.id
+    @appointment = get_user.appointments.build(appointment_params)
 
     respond_to do |format|
       if @appointment.save
@@ -66,9 +65,41 @@ class AppointmentsController < ApplicationController
 
   private
 
+  # Check relation between current_user and other user
+
+  def verify_shared_users
+    if user_check_present?
+      if shared?
+        @shared_user = shared?.presence
+      else
+        redirect_to appointments_path, notice: 'Usuário não compartilhado!'
+      end
+    else
+      current_user
+    end
+  end
+
+  def user_check_present?
+    params[:user_check].present?
+  end
+
+  def shared?
+    current_user.users_i_share_with.find_by(id: params[:user_check])
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_appointment
-    @appointment = Appointment.find(params[:id])
+    
+    # @appointment = if @shared_user.present?
+    #                  @shared_user.appointments
+    #                else
+    #                  current_user.appointments.find(params[:id])
+    #                end
+    @appointment = Appointment.find_by_id(params[:id])
+  end
+
+  def get_user
+    user ||= verify_shared_users
   end
 
   # Only allow a list of trusted parameters through.

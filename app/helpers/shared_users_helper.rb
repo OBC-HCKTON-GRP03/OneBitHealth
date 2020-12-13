@@ -1,0 +1,2 @@
+module SharedUsersHelper
+end

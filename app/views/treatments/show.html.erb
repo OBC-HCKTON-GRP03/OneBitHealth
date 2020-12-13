@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <p>
   <strong>Title:</strong>
@@ -29,6 +31,8 @@
   <strong>Appointment:</strong>
   <%= @treatment.appointment_id %>
 </p>
+<% unless @appointment !=current_user %>
 
-<%= link_to 'Edit', edit_appointment_treatment_path(@appointment, @treatment) %> |
-<%= link_to 'Back', appointment_treatments_path(@appointment) %>
+  <%= link_to 'Edit' , edit_appointment_treatment_path(@appointment, @treatment) %> |
+    <%= link_to 'Back' , appointment_treatments_path(@appointment) %>
+      <% end %>

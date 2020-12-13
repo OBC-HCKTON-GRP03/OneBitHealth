@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <p>
   <strong>Title:</strong>
@@ -25,5 +27,7 @@
   <%= @exam.appointment_id %>
 </p>
 
-<%= link_to 'Edit', edit_appointment_exam_path(@appointment, @exam) %> |
-<%= link_to 'Back', appointment_exams_path(@appointment) %>
+<% unless @appointment.user !=current_user %>
+  <%= link_to 'Edit' , edit_appointment_exam_path(@appointment, @exam) %> |
+    <%= link_to 'Back' , appointment_exams_path(@appointment) %>
+      <% end %>
