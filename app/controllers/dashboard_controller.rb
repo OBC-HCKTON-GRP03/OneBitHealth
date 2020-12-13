@@ -49,6 +49,7 @@ class DashboardController < ApplicationController
 
 			respond_to do |format|
 				format.js
+				return
 			end
 		end
 
