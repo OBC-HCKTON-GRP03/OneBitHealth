@@ -89,13 +89,12 @@ class AppointmentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_appointment
-    
     # @appointment = if @shared_user.present?
     #                  @shared_user.appointments
     #                else
     #                  current_user.appointments.find(params[:id])
     #                end
-    @appointment = Appointment.find_by_id(params[:id])
+    @appointment = Appointment.find_by(id: params[:id])
   end
 
   def get_user

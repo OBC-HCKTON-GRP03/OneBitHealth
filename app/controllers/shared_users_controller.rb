@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SharedUsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_shared_user, only: [:destroy]
@@ -18,7 +20,6 @@ class SharedUsersController < ApplicationController
     @shared_user.destroy
     redirect_to dashboard_path
   end
-  
 
   def set_shared_user
     # @shared_user = SharedUser.find_by(user_id: params[:id], i_share_with_id: current_user)

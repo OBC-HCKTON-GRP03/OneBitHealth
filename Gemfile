@@ -31,18 +31,18 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
-  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'email_spec', '~> 2.2'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 group :development do
+  gem 'annotate', '~> 3.1'
+  gem 'better_errors', '~> 2.9'
+  gem 'binding_of_caller', '~> 0.8.0'
   gem 'listen', '~> 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
-  gem "better_errors", "~> 2.9"
-  gem "binding_of_caller", "~> 0.8.0"
-  gem "annotate", "~> 3.1"
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -59,4 +59,4 @@ gem 'rubocop-rspec', '~> 2.0', require: false
 
 gem 'rubocop-performance', require: false
 
-gem "carrierwave", "~> 2.1"
+gem 'carrierwave', '~> 2.1'

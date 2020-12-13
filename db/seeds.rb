@@ -15,7 +15,8 @@ if Rails.env.development? && User.count.zero?
   last_id = User.exists? ? User.last.id + 1 : 1
 
   8.times do
-    User.create!(name: "Default #{last_id}", email: "#{last_id}@default.com", password: '123456', password_confirmation: '123456')
+    User.create!(name: "Default #{last_id}", email: "#{last_id}@default.com", password: '123456',
+                 password_confirmation: '123456')
     last_id += 1
   end
 end
