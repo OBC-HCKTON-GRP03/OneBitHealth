@@ -1,40 +1,45 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %></p>
+<div class="tables_standart mb-5">
+  <h1>Tratamentos</h1>
 
-<h1>Treatments</h1>
+  <table class="table table-hover" data-toggle="table" data-search="true" data-strict-search="true">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Data</th>
+        <th>Local do Tratamento</th>
+        <th colspan="2" style="background-color: var(--color-primary)"></th>
+      </tr>
+    </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Establishment name</th>
-      <th>Kind</th>
-      <th>Treatment date</th>
-      <th>Appointment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @treatments.each do |treatment| %>
-    <tr>
-      <td><%= treatment.title %></td>
-      <td><%= treatment.description %></td>
-      <td><%= treatment.establishment_name %></td>
-      <td><%= treatment.kind %></td>
-      <td><%= treatment.treatment_date %></td>
-      <td><%= treatment.appointment_id %></td>
-      <td><%= link_to 'Show', [@appointment] %></td>
-      <td><%= link_to 'Edit Treatment', edit_appointment_treatment_path(@appointment, treatment) %></td>
-      <td>
-        <%= link_to 'Destroy Treatment', [@appointment, treatment], method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Treatment', new_appointment_treatment_path(@appointment) %>
-<%= link_to 'Back to Appointment', appointment_path(@appointment) %>
+    <tbody>
+      <% @treatments.each do |treatment| %>
+        <tr>
+          <td>
+            <%= treatment.title %>
+          </td>
+          <td>
+            <%= treatment.treatment_date.strftime('%d/%m') %>
+          </td>
+          <td>
+            <%= treatment.establishment_name %>
+          </td>
+          <% unless @shared_user%>
+            <td>
+              <%= link_to edit_appointment_treatment_path(@appointment, treatment) do %>
+                <%= image_tag 'icon_edit.svg' %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to  [@appointment, treatment], method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                <%= image_tag('icon_trash.svg')%>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+    
+  </table>
+</div>

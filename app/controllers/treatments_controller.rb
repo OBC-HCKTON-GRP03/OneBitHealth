@@ -31,7 +31,8 @@ class TreatmentsController < ApplicationController
     respond_to do |format|
       if @treatment.save
         format.html do
-          redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully created.'
+          # Ao criar um novo tratamento você voltará para a tela de consulta
+          redirect_to appointment_path(@appointment), notice: 'Tratamento adicionado com sucesso.'
         end
         format.json { render :show, status: :created, location: @treatment }
       else
@@ -47,7 +48,8 @@ class TreatmentsController < ApplicationController
     respond_to do |format|
       if @treatment.update(treatment_params)
         format.html do
-          redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully updated.'
+          # Ao realizar o atualização você voltará ao tela do tratamento atualizado
+          redirect_to appointment_treatment_path(@appointment), notice: 'Tratamento atualizado com sucesso.'
         end
         format.json { render :show, status: :ok, location: @treatment }
       else
@@ -63,7 +65,8 @@ class TreatmentsController < ApplicationController
     @treatment.destroy
     respond_to do |format|
       format.html do
-        redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully destroyed.'
+        # Ao remover o tratamento você voltará ao show da consulta
+        redirect_to appointment_path(@appointment), notice: 'Tratamento removido com sucesso.'
       end
       format.json { head :no_content }
     end

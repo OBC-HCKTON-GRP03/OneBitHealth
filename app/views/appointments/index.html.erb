@@ -17,43 +17,41 @@
 
     <tbody>
       <% @appointments.each do |appointment| %>
-        <td>
-          <%= appointment.title %>
-        </td>
-        <td>
-          <%= appointment.professional_name %>
-        </td>
-        <td>
-          <%= appointment.appointment_date.strftime('%d/%m') %>
-        </td>
-
-        <td>
-          <%= link_to appointment do %>
-            <%= image_tag 'icon_show.svg' %>
-              <% end %>
-        </td>
-
-        <% unless @shared_user%>
+        </tr>
           <td>
-            <%= link_to edit_appointment_path(appointment) do %>
-              <%= image_tag 'icon_edit.svg' %>
-                <% end %>
+            <%= appointment.title %>
           </td>
-
           <td>
-            <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' } do %>
-              <%= image_tag('icon_trash.svg')%>
-                <% end %>
+            <%= appointment.professional_name %>
           </td>
-          <% end %>
-
-            </tr>
+          <td>
+            <%= appointment.appointment_date.strftime('%d/%m') %>
+          </td>
+          <td>
+            <%= link_to appointment do %>
+              <%= image_tag 'icon_show.svg' %>
             <% end %>
+          </td>
+
+          <% unless @shared_user%>
+            <td>
+              <%= link_to edit_appointment_path(appointment) do %>
+                <%= image_tag 'icon_edit.svg' %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to appointment, method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                <%= image_tag('icon_trash.svg')%>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
     </tbody>
   </table>
   <% unless @shared_user %>
     <button class="button_shape create_instance btn-lg btn-block interactive_button mt-5">
       <%= link_to 'Nova consulta' , new_appointment_path %>
     </button>
-    <% end %>
+  <% end %>
 </div>

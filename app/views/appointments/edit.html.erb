@@ -5,8 +5,7 @@
 				<div class="container-sm interactive_button">
 					<h1 class="text-center">Editar Consulta</h1>
 					<%= render 'form', appointment: @appointment %>
-					<%= link_to 'Visualizar consulta', @appointment, class:"btn-info button_style_horizontal btn mb-4 text-left" %>
-					<%= link_to 'Voltar', appointments_path, class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+					<%= link_to 'Voltar', @appointment, class:"btn-info button_style_horizontal btn mb-4 text-left" %>
 				</div>
 			</div>
 		</div>
