@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class TreatmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_appointment
   before_action :set_treatment, only: %i[show edit update destroy]
-  layout "dashboard"
+  layout 'dashboard'
   # GET /treatments
   # GET /treatments.json
   def index
@@ -28,7 +30,9 @@ class TreatmentsController < ApplicationController
 
     respond_to do |format|
       if @treatment.save
-        format.html { redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully created.' }
+        format.html do
+          redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully created.'
+        end
         format.json { render :show, status: :created, location: @treatment }
       else
         format.html { render :new }
@@ -42,7 +46,9 @@ class TreatmentsController < ApplicationController
   def update
     respond_to do |format|
       if @treatment.update(treatment_params)
-        format.html { redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully updated.' }
+        format.html do
+          redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @treatment }
       else
         format.html { render :edit }
@@ -56,7 +62,9 @@ class TreatmentsController < ApplicationController
   def destroy
     @treatment.destroy
     respond_to do |format|
-      format.html { redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully destroyed.' }
+      format.html do
+        redirect_to appointment_treatments_path(@appointment), notice: 'Treatment was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -70,7 +78,8 @@ class TreatmentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def treatment_params
-    params.require(:treatment).permit(:title, :description, :establishment_name, :kind, :treatment_date, :appointment_id)
+    params.require(:treatment).permit(:title, :description, :establishment_name, :kind, :treatment_date,
+                                      :appointment_id)
   end
 
   def get_appointment

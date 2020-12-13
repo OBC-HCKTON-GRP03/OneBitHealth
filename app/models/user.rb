@@ -30,7 +30,6 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :users_i_share_with,
                           class_name: 'User',
-                          foreign_key: 'user_id',
                           association_foreign_key: 'i_share_with_id',
                           join_table: :shared_users
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSharedUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :shared_users do |t|

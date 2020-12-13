@@ -4,7 +4,7 @@ class ExamsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_appointment
   before_action :set_exam, only: %i[show edit update destroy]
-  layout "dashboard"
+  layout 'dashboard'
 
   # GET /appintment/:appoint_id/exams
   def index
@@ -72,7 +72,8 @@ class ExamsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exam_params
-    params.require(:exam).permit(:title, :description, :establishment_name, :exam_date, :appointment_id, {documents: []})
+    params.require(:exam).permit(:title, :description, :establishment_name, :exam_date, :appointment_id,
+                                 { documents: [] })
   end
 
   def get_appointment

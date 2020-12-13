@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ErrorsController < ApplicationController
   protect_from_forgery except: [:not_found]
   # skip_before_action :require_login, only: [:fatal_test, :error_test]

@@ -1,20 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  
   root 'home#index'
 
   resources :appointments do
     resources :exams
     resources :treatments
   end
-  
+
   get 'home', to: 'home#index'
-  
+
   get '/dashboard', to: 'dashboard#index'
   get 'shared_history', to: 'dashboard#users_sharing_with_me'
-  
-  resources :shared_users, only: [:destroy, :create]
+
+  resources :shared_users, only: %i[destroy create]
 
   devise_for :users
   get '/user' => 'dashboard#index', :as => :user_root
@@ -25,5 +24,4 @@ Rails.application.routes.draw do
 
   match '*path', to: 'errors#not_found', via: :all
   ##
-
 end
