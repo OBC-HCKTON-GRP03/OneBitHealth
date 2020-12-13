@@ -1,37 +1,78 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-     
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">New Task</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
 
-        <div class="modal-body">
-          <form id="new-task-form">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Task Name</label>
-              <input type="text" name ="name" class="form-control" id="new-task-name" aria-describedby="emailHelp" placeholder="Enter Task Name">
-            </div>
 
-            <div class="form-group">
-            </div>
-            <div class="task-eligible-member">
-              <div class="member-card" style="border-radius: 50%;">
-                <div class="member-img" style="border-radius: 50%;">
-                  <!-- Show member sharer -->
-                </div>
-              </div>
-            </div>
-    
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-aqua" id="new-task">Share</button>
-        </div>
+
+
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+
+
+      <div class="modal-body">
+        <% @users=User.find_by_sql("select * from users where id !=#{current_user.id} and id not in (select
+          i_share_with_id from shared_users where user_id=#{current_user.id})")%>
+
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Usuários a serem compartilhados!</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |shared_with| %>
+                <tr>
+                  <td>
+                    <%= "#{shared_with.name}" %>
+                  <td>
+                    <%= link_to shared_users_path(user_id: current_user.id, i_share_with_id: shared_with.id), method:
+                      :post do %>
+                      <% "Adicionar" %>
+                        <% end %>
+                  </td>
+                  </td>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Usuários Que Compartilho!</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% current_user.users_i_share_with.each do |shared| %>
+                <tr>
+                  <td>
+                    <%= "#{shared.name}" %>
+                  <td>
+                    <%= link_to shared_user_path(shared), method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                      <%= image_tag('icon_trash.svg')%>
+                        <% end %>
+                  </td>
+                  </td>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+      </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-aqua" id="new-task">Share</button>
     </div>
   </div>
+</div>
+</div>

@@ -1,24 +1,32 @@
-    <% if results.count > 0 %>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col-md-3">Título</th>
-            <th scope="col-md-3">Data</th>
-            <th scope="col-md-3">Profissional</th>
-            <th scope="col-md-3">Estabelecimento</th>
-          </tr>
-        </thead>
-          <tbody>
-            <% results.each do |result| %>
-              <tr>
-                <td><%= link_to result['title'], result['link'], class:"text-decoration-none results_tables" %></td>
-                <td class="text-decoration-none results_tables"><%= result['date'].to_time.strftime('%d/%m/%Y') %></td>
-                <td class="text-decoration-none results_tables"><%= result['professional'] %></td>
-                <td class="text-decoration-none results_tables"><%= result['establishment'] %></td>
-              </tr>
-              <% end %>
-          </tbody>
-      </table>
-    <% else %>
-      <h4>Consulta não retornou nenhum registro.</h4>
+<% if results.count> 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col-md-3">Título</th>
+        <th scope="col-md-3">Data</th>
+        <th scope="col-md-3">Profissional</th>
+        <th scope="col-md-3">Estabelecimento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% results.each do |result| %>
+        <tr>
+          <td>
+            <%= link_to result['title'], result['link'], class:"text-decoration-none results_tables" %>
+          </td>
+          <td class="text-decoration-none results_tables">
+            <%= result['date'].to_time.strftime('%d/%m/%Y') %>
+          </td>
+          <td class="text-decoration-none results_tables">
+            <%= result['professional'] %>
+          </td>
+          <td class="text-decoration-none results_tables">
+            <%= result['establishment'] %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <h4>Consulta não retornou nenhum registro.</h4>
     <% end %>

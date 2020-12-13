@@ -2,8 +2,9 @@ class DashboardController < ApplicationController
 	before_action :authenticate_user! 
 	layout "dashboard"
 
+	
 	def index
-		if params[:search]
+		if params[:search].present?
 			sql = "SELECT 
 							a.title as title, 
 							a.appointment_date as date,
@@ -54,5 +55,13 @@ class DashboardController < ApplicationController
 		@appointments = current_user.appointments.order(appointment_date: :desc).limit(3)
 		@exams = current_user.exams.order(exam_date: :desc).limit(3)
 		@treatments = current_user.treatments.order(treatment_date: :desc).limit(3)
+		
+		respond_to do |format|
+			format.html
+		end
+	end
+	def users_sharing_with_me
+		@shared_history = current_user.users_sharing_with_me
+		render 'dashboard/users_sharing_with_me'
 	end
 end
