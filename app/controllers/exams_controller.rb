@@ -44,7 +44,7 @@ class ExamsController < ApplicationController
   def update
     respond_to do |format|
       if @exam.update(exam_params)
-        format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exam was successfully updated.' }
+        format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exame foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @exam }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExamsController < ApplicationController
   def destroy
     @exam.destroy
     respond_to do |format|
-      format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exam was successfully destroyed.' }
+      format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exame foi deletado com sucesso!' }
       format.json { head :no_content }
     end
   end
