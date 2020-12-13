@@ -3,9 +3,12 @@
 		font-family: 'Oxygen', sans-serif;
 		color: var(--gray-inputs-legends);
 		margin-bottom: 1em;
+		overflow: hidden;
 	}
 	td{
-		text-transform: uppercase;
+		text-transform: capitalize;
+		font-size: 1.6em;
+		color: var(--text-color)
 	}
 	table{
 		border-radius: 10px;

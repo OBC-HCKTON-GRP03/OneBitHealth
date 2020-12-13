@@ -1,6 +1,14 @@
-<h1>Editar Consulta</h1>
-
-<%= render 'form', appointment: @appointment %>
-
-<%= link_to 'Visualizar consulta', @appointment %> |
-<%= link_to 'Voltar', appointments_path %>
+<div class="container-fluid show_card tables_standart">
+  <div class="cards">
+    <div class="card">
+    	<div class="contents ">
+				<div class="container-sm interactive_button">
+					<h1 class="text-center">Editar Consulta</h1>
+					<%= render 'form', appointment: @appointment %>
+					<%= link_to 'Visualizar consulta', @appointment, class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+					<%= link_to 'Voltar', appointments_path, class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
