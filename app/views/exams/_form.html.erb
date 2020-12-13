@@ -7,13 +7,11 @@
     <%= f.input :description %>
     <%= f.input :establishment_name %>
     <%= f.datetime_field :exam_date %>
-    <br>
-    <%= f.label 'Documentos' %>
+    <br><br>
+    <%= f.label 'Documentos' %> 
     <%= f.file_field :documents, multiple: true %>
-    <!-- <%= f.association :appointment %> -->
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Criar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+    <!-- <%= f.association :appointment %> -->
   </div>
 <% end %>
