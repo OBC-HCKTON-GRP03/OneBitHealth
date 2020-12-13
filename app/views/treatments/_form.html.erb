@@ -1,18 +1,22 @@
-<%= simple_form_for([@appointment, @treatment]) do |f| %>
-<%= f.error_notification %>
-<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
+  <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
+    <div class="col-lg-10">
+			<%= simple_form_for([@appointment, @treatment]) do |f| %>
+				<%= f.error_notification %>
+				<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div class="form-inputs">
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :establishment_name %>
-  <!-- <%= f.input :kind %> -->
-  <%= f.input :kind, collection: Treatment.kinds.keys %>
-  <%= f.input :treatment_date %>
-  <!-- <%= f.association :appointment %> -->
-</div>
+  			<div class="form-group">
+  				<%= f.input :title, label: 'Título' %>
+  				<%= f.input :description, label: 'Descrição' %>
+  				<%= f.input :establishment_name, label: 'Nome do Estabelecimento' %>
+  				<!-- <%= f.input :kind %> -->
+  				<%= f.input :kind, collection: Treatment.kinds.keys %>
+  				<%= f.datetime_field :treatment_date %>
+  				<!-- <%= f.association :appointment %> -->
 
-<div class="form-actions">
-  <%= f.button :submit %>
+					<%= f.button :submit, "Adicionar Tratamento" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+        </div>
+			<% end %>
+		</div>
+	</div>
 </div>
-<% end %>

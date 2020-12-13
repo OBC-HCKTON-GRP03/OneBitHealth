@@ -1,6 +1,15 @@
-<h1>Editing Treatment</h1>
+<div class="container-fluid show_card tables_standart">
+  <div class="cards">
+    <div class="card">
+    	<div class="contents ">
+				<div class="container-sm interactive_button">
+					<h1 class="text-center">Editar Consulta</h1>
+					<%= render 'form', treatment: @treatment %>
+					<%= link_to 'Visualizar tratamentos', [@appointment,@treatment], class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+					<%= link_to 'Voltar', appointment_treatments_path(@appointment), class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form', treatment: @treatment %>
-
-<%= link_to 'Show', [@appointment,@treatment] %> |
-<%= link_to 'Back', appointment_treatments_path(@appointment) %>
