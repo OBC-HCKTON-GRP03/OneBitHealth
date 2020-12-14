@@ -82,14 +82,14 @@
 									<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 										<ul id="nav" class="navbar-nav ml-auto">
 										<li class="nav-item">
-											<%= link_to "Minha Conta", dashboard_path , class: "page-scroll active" %>
+											<%= link_to "Minha Conta", dashboard_path %>
 										</li>
 										<li class="nav-item">
-											<%= link_to "Cadastrar", "/users/sign_up", class: "page-scroll active" %>
+											<%= link_to "Cadastrar", "/users/sign_up" %>
 										</li>
  										<% if user_signed_in? %>
  											<li class="nav-item">
-												<%= link_to "Sair", destroy_user_session_path , method: :delete  , class: "page-scroll active" %>
+												<%= link_to "Sair", destroy_user_session_path , method: :delete %>
 											</li>
 										<% end %> 
 										</ul>
@@ -379,9 +379,15 @@
 							<div class="faq-item">
 								<div id="headingFour">
 									<h5 class="mb-0">
-										<button class="faq-btn btn collapsed" type="button" data-toggle="collapse"
-											data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-											Que tipo de arquivos dos exames posso armazenar? <i class="lni"></i>
+										<button 
+											class="faq-btn btn collapsed"
+											type="button"
+											data-toggle="collapse"
+											data-target="#collapseFour"
+											aria-expanded="true"
+											aria-controls="collapseFour">
+												Que tipo de arquivos dos exames posso armazenar? 
+												<i class="lni"></i>
 										</button>
 									</h5>
 								</div>
@@ -434,7 +440,6 @@
 		</div>
 	</footer>
 	<!-- ========================= footer end ========================= -->
-
 
 	<!-- ========================= scroll-top ========================= -->
 	<a href="#" class="scroll-top">
