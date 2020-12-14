@@ -5,7 +5,7 @@
   Mostrar o nome do estabelecimento onde foi feito o tratamento 
   Mostrar do Tratamento enum > Campo enum > TODO: pode ser adicionado mais
   Mostrar a data do tratamento
-  Tem o botão para criar o tratamento 
+  Tem o botão para criar o tratamento ou salvar
 -->
 <div class="container">
   <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
@@ -23,7 +23,11 @@
   				<%= f.datetime_field :treatment_date %>
   				<!-- <%= f.association :appointment %> -->
 
-					<%= f.button :submit, "Adicionar Tratamento" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% if action_name == 'edit'%>  
+            <%= f.button :submit, "Editar Tratamento" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% else %>
+            <%= f.button :submit, "Criar Tratamento" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% end %>
         </div>
 			<% end %>
 		</div>

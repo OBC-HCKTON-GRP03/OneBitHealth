@@ -30,7 +30,8 @@ class ExamsController < ApplicationController
 
     respond_to do |format|
       if @exam.save
-        format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exam was successfully created.' }
+        # Ao criar um exame você irá para a tela da consulta
+        format.html { redirect_to appointment_path(@appointment), notice: 'Exame criado com sucesso.' }
         format.json { render :show, status: :created, location: @exam }
       else
         format.html { render :new }
@@ -44,7 +45,8 @@ class ExamsController < ApplicationController
   def update
     respond_to do |format|
       if @exam.update(exam_params)
-        format.html { redirect_to appointment_exams_path(@appointment), notice: 'Exame foi atualizado com sucesso!' }
+        # Ao fazer a atualização você voltará para tela de update  
+        format.html { redirect_to appointment_path(@appointment), notice: 'Exame foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @exam }
       else
         format.html { render :edit }
