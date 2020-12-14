@@ -194,4 +194,4 @@ Project Link: [https://github.com/OBC-HCKTON-GRP03/OneBitHealth](https://github.
 [issues-url]: https://github.com/OBC-HCKTON-GRP03/OneBitHealth/issues
 [license-shield]: https://img.shields.io/github/license/OBC-HCKTON-GRP03/OneBitHealth.svg?style=flat-square
 [license-url]: https://github.com/OBC-HCKTON-GRP03/OneBitHealth/blob/main/LICENSE.txt
-[product-screenshot]: /assets/images/homescreen.png
+[product-screenshot]: /app/assets/images/homescreen.png
