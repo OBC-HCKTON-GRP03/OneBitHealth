@@ -3,6 +3,11 @@
 class SharedUsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_shared_user, only: [:destroy]
+  layout 'dashboard' 
+
+  def index
+    @shared_history = current_user.users_sharing_with_me
+  end
 
   def create
     @share_user = SharedUser.new(shared_user_params)

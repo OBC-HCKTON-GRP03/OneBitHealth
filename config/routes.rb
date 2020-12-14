@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
 
   get '/dashboard', to: 'dashboard#index'
-  get 'shared_history', to: 'dashboard#users_sharing_with_me'
+  get '/shared_history', to: 'shared_users#index'
 
   resources :shared_users, only: %i[destroy create]
 
