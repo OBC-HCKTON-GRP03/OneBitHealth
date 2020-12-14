@@ -1,12 +1,6 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
   aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-
-
-
-
-
-
+  <div class="modal-dialog modal-lg" role="document">    
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">New Task</h5>
@@ -14,58 +8,43 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-
-
       <div class="modal-body">
-        <% @users=User.find_by_sql("select * from users where id !=#{current_user.id} and id not in (select
-          i_share_with_id from shared_users where user_id=#{current_user.id})")%>
+        <div>
+          <input type="text" id="shared_search" name="share_search" value="" placeholder="Buscar">
+        </div>
 
+        <table class="table table-striped not-shared-yet">
+          <thead>
+            <tr>
+              <th scope="col">Usuários a serem compartilhados!</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Field where it will print results -->
+          </tbody>
+        </table>
 
-          <table class="table table-striped">
-            <thead>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Usuários Que Compartilho</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% current_user.users_i_share_with.each do |shared| %>
               <tr>
-                <th scope="col">Usuários a serem compartilhados!</th>
+                <td>
+                  <%= "#{shared.name}" %>
+                </td>
+                <td>
+                  <%= link_to shared_user_path(shared), method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                    <%= image_tag('icon_trash.svg')%>
+                  <% end %>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              <% @users.each do |shared_with| %>
-                <tr>
-                  <td>
-                    <%= "#{shared_with.name}" %>
-                  <td>
-                    <%= link_to shared_users_path(user_id: current_user.id, i_share_with_id: shared_with.id), method:
-                      :post do %>
-                      <% "Adicionar" %>
-                        <% end %>
-                  </td>
-                  </td>
-                </tr>
-                <% end %>
-            </tbody>
-          </table>
-
-
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Usuários Que Compartilho!</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% current_user.users_i_share_with.each do |shared| %>
-                <tr>
-                  <td>
-                    <%= "#{shared.name}" %>
-                  <td>
-                    <%= link_to shared_user_path(shared), method: :delete, data: { confirm: 'Você tem certeza?' } do %>
-                      <%= image_tag('icon_trash.svg')%>
-                        <% end %>
-                  </td>
-                  </td>
-                </tr>
-                <% end %>
-            </tbody>
-          </table>
+            <% end %>
+          </tbody>
+        </table>
       </div>
       </form>
     </div>

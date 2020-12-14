@@ -1,4 +1,4 @@
-<% if results.count> 0 %>
+<% if results.count > 0 %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -24,9 +24,9 @@
             <%= result['establishment'] %>
           </td>
         </tr>
-        <% end %>
+      <% end %>
     </tbody>
   </table>
-  <% else %>
-    <h4>Consulta não retornou nenhum registro.</h4>
-    <% end %>
+<% else %>
+  <h4>Consulta não retornou nenhum registro.</h4>
+<% end %>
