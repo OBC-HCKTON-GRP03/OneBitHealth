@@ -168,7 +168,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Diego de A. Senott - [@senott](https://twitter.com/senott) - senott@yahoo.com
+Diego de A. Senott - [@senott](https://twitter.com/senott) - senott@yahoo.com  
+Haroldo Furtado - haroldofurtado@gmail.com  
+Jorge Borges - jorgeborgesdev@gmail.com  
+Ricardo Utino - [@Uc_Richard](https://twitter.com/Uc_Richard) - rickutino@gmail.com  
+Thomás Escolástico Bueno - thomasbuenou@gmail.com  
 
 Project Link: [https://github.com/OBC-HCKTON-GRP03/OneBitHealth](https://github.com/OBC-HCKTON-GRP03/OneBitHealth)
 
