@@ -11,7 +11,11 @@
   			  <%= f.input :professional_name, label: 'Profissional' %>
   			  <%= f.datetime_field :appointment_date %>
 
-					<%= f.button :submit, "Criar Consulta" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% if action_name == 'edit'%>  
+            <%= f.button :submit, "Editar Consulta" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% else %>
+            <%= f.button :submit, "Criar Consulta" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% end %>        
         </div>
 			<% end %>
 		</div>

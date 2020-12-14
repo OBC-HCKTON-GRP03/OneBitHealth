@@ -1,17 +1,32 @@
-<%= simple_form_for([@appointment, @exam]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :establishment_name %>
-    <%= f.datetime_field :exam_date %>
-    <br><br>
-    <%= f.label 'Documentos' %> 
-    <%= f.file_field :documents, multiple: true %>
-
-    <%= f.button :submit, "Criar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
-    <!-- <%= f.association :appointment %> -->
+<!--
+  Mostrar o titulo do exame 
+  Mostrar a descriação do exame 
+  Mostrar o nome do esbelecimento onde foi feito o exame 
+  Mostrar a data do exame 
+  Motrar o campo de associação de documentos 
+  Tem um botão para criar o exame ou salvar exame 
+-->
+<div class="container">
+  <div class="d-flex justify-content-center col-sm-12 col-md-10 col-lg">
+    <div class="col-lg-10">
+      <%= simple_form_for([@appointment, @exam]) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+        <div class="form-group">
+          <%= f.input :title, label: 'Título' %>
+          <%= f.input :description, label: 'Descrição' %>
+          <%= f.input :establishment_name %>
+          <%= f.datetime_field :exam_date %>
+          <%= f.label 'Documentos' %> 
+          <%= f.file_field :documents, multiple: true %>
+          <% if action_name == 'edit'%>  
+            <%= f.button :submit, "Editar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% else %>
+            <%= f.button :submit, "Criar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg btn-block text-center"} %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

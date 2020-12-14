@@ -1,6 +1,13 @@
-<h1>Editing Exam</h1>
-
-<%= render 'form', exam: @exam %>
-
-<%= link_to 'Show', [@appointment, @exam] %> |
-<%= link_to 'Back', appointment_exams_path(@appointment) %>
+<div class="container-fluid show_card tables_standart">
+  <div class="cards">
+    <div class="card">
+    	<div class="contents ">
+				<div class="container-sm interactive_button">
+					<h1 class="text-center">Editar Exames</h1>
+					<%= render 'form', exam: @exam %>
+					<%= link_to 'Voltar', appointment_path(@appointment), class:"btn-info button_style_horizontal btn mb-4 text-left" %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
