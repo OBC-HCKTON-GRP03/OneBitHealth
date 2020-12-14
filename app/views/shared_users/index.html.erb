@@ -1,0 +1,38 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<div class="tables_standart mb-5">
+	<h1>Pessoas que compartilharam o histórico comigo</h1>
+
+	<table class="table table-hover" data-toggle="table" data-search="true" data-strict-search="true">
+		<thead>
+			<tr>
+				<th>Usuários</th>
+				<th>Nome</th>
+				<th>Email</th>
+				<th colspan="3" style="background-color: var(--color-primary)"></th>
+			</tr>
+		</thead>
+		<tbody>
+				<% if @shared_history.present? %>
+						<tr>
+							<% @shared_history.each do |shared| %>
+								<td><%= image_tag 'icon_user.svg', class:"mr-5" %>  </td>
+								<td>
+									<%= shared.name  %>
+								</td>
+								<td>
+									<%= shared.email %>
+								</td>
+								<td>
+            			<%= link_to "/appointments?user_check=#{shared.id}" do %>
+            	  		<%= image_tag 'icon_show.svg'%>
+            			<% end %>
+            		</td>
+            	</tr>
+						<% end %>
+				<% end %>
+		</tbody>
+	</table>
+</div>

@@ -63,8 +63,8 @@ class DashboardController < ApplicationController
     end
   end
 
-  def users_sharing_with_me
-    @shared_history = current_user.users_sharing_with_me
-    render 'dashboard/users_sharing_with_me'
-  end
+  # def users_sharing_with_me
+  #   @shared_history = current_user.users_sharing_with_me
+  #   render 'dashboard/users_sharing_with_me'
+  # end
 end
