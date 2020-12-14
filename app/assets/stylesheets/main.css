@@ -19,7 +19,6 @@
     COMMON css 
 ===========================*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:300,400,500,600,600i,700,900&display=swap");
-
 html {
   scroll-behavior: smooth;
 }
