@@ -1,5 +1,6 @@
 namespace :dev do
   DEFAULT_PASWORD = '123456'.freeze
+
   desc 'Configurações básicas para o desenvolvimento da aplicação!'
   task setup: :environment do
     if Rails.env.development?
@@ -11,6 +12,7 @@ namespace :dev do
       show_spinner('Cadastrando as consultas para os usuários...') { `rails dev:add_appointments_to_user` }
       show_spinner('Cadastrando os exames para as consultas...') { `rails dev:add_exams_to_appointment` }
       show_spinner('Cadastrando os tratamentos para as consultas...') { `rails dev:add_treatments_to_appointment` }
+      puts 'Ooooooowwww! Tudo tudo certo! \\o/'
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
