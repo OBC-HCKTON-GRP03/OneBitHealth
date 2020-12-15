@@ -2,7 +2,7 @@
 
 class AppointmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :verify_shared_users
+  before_action :get_user
 
   before_action :set_appointment, only: %i[show edit update destroy]
   layout 'dashboard'
@@ -69,8 +69,8 @@ class AppointmentsController < ApplicationController
 
   def get_user
     if user_check_present?
-      if shared?
-        @shared_user = shared?.presence
+      if sharing_with_me?
+        @shared_user = sharing_with_me?.presence
       else
         redirect_to appointments_path, notice: 'Usuário não compartilhado!'
       end
