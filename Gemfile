@@ -60,3 +60,5 @@ gem 'rubocop-rspec', '~> 2.0', require: false
 gem 'rubocop-performance', require: false
 
 gem 'carrierwave', '~> 2.1'
+
+gem "tty-spinner", "~> 0.9.3"
