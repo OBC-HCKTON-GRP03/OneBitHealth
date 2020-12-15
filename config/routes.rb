@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#index'
   get '/shared_history', to: 'shared_users#index'
+  post '/search_shared_user', to: 'shared_users#search_user'
 
   resources :shared_users, only: %i[destroy create]
 
   devise_for :users
-  get '/user' => 'dashboard#index', :as => :user_root
+  get '/user' => 'dashboard#index', as: :user_root
 
   ## Essas linha de codigo tem que esta por ultimo.
   get 'fatal_test', to: 'errors#fatal_test'
