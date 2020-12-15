@@ -35,7 +35,7 @@ namespace :dev do
       name = Faker::Name.name
       User
         .create!(name: name,
-                 email: Faker::Internet.email(name: (I18n.transliterate name)),
+                 email: Faker::Internet.email(name: (I18n.transliterate name)).downcase,
                  password: DEFAULT_PASWORD,
                  password_confirmation: DEFAULT_PASWORD)
     end
