@@ -20,8 +20,4 @@ import $ from "jquery"
 import "bootstrap"
 import "../stylesheets/application"
 import "../menu_dashboard.js"
-<<<<<<< HEAD
-import "../index.js"
-=======
 import "../shared.js"
->>>>>>> Ajustes na busca do modal a partir de ajax
