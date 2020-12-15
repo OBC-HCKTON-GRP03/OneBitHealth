@@ -12,7 +12,10 @@ namespace :dev do
       show_spinner('Cadastrando as consultas para os usuários...') { `rails dev:add_appointments_to_user` }
       show_spinner('Cadastrando os exames para as consultas...') { `rails dev:add_exams_to_appointment` }
       show_spinner('Cadastrando os tratamentos para as consultas...') { `rails dev:add_treatments_to_appointment` }
-      puts 'Ooooooowwww! Tudo tudo certo! \\o/'
+      puts 'Ooooooowwww! Deu tudo certo! \\o/'
+      puts 'Vou subir o servidor para você...'
+      `lsof -t -i tcp:3000 | xargs kill -9` if `lsof -t -i tcp:3000`.present?
+      exec('rails s')
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
