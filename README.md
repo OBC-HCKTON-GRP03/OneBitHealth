@@ -51,6 +51,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -130,6 +131,7 @@ Project created for the first hackaton of the One Bit Code Fullstack Developer B
 10. It is possible to set the entire development environment with the command below:
   ```sh
   rails dev:setup
+  ```
 <!-- USAGE EXAMPLES -->
 ## Usage
 Start the Rails Server:
