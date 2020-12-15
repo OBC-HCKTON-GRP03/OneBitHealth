@@ -67,7 +67,7 @@ class AppointmentsController < ApplicationController
 
   # Check relation between current_user and other user
 
-  def verify_shared_users
+  def get_user
     if user_check_present?
       if shared?
         @shared_user = shared?.presence
@@ -83,22 +83,13 @@ class AppointmentsController < ApplicationController
     params[:user_check].present?
   end
 
-  def shared?
+  def sharing_with_me?
     current_user.users_sharing_with_me.find_by(id: params[:user_check])
   end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_appointment
-    # @appointment = if @shared_user.present?
-    #                  @shared_user.appointments
-    #                else
-    #                  current_user.appointments.find(params[:id])
-    #                end
     @appointment = Appointment.find_by(id: params[:id])
-  end
-
-  def get_user
-    user = verify_shared_users
   end
 
   # Only allow a list of trusted parameters through.
