@@ -45,17 +45,17 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 
 
@@ -127,7 +127,9 @@ Project created for the first hackaton of the One Bit Code Fullstack Developer B
   ```sh
   bundle exec cucumber
   ```
-
+10. It is possible to set the entire development environment with the command below:
+  ```sh
+  rails dev:setup
 <!-- USAGE EXAMPLES -->
 ## Usage
 Start the Rails Server:
