@@ -89,7 +89,9 @@ namespace :dev do
 
   task add_some_shared_users: :environment do
     User.all.each do |user|
-      SharedUser.create!(user_id: user.id, i_share_with_id: (user.id + 1)) if user.id.odd?
+      User.where("id != #{user.id}").sample(rand(2..4)).each do |x|
+        SharedUser.create!(user_id: user.id, i_share_with_id: x.id)
+      end
     end
   end
 
