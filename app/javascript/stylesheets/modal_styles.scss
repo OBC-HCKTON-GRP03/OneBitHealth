@@ -1,0 +1,111 @@
+/* Modal Shearch Style */
+.modal{
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+  
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey; 
+      border-radius: 10px;
+    }
+ 
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-primary); 
+      border-radius: 100%;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000; 
+    }
+
+  /* Title field */
+  .modal_header{
+    .modal_title{
+      color: var(--gray-inputs-legends)
+    }
+  }
+  
+  /* Field search */
+  
+  .input_search {
+    input{
+      color: #000;
+      border-radius: 15px;
+      padding-left: 10px;
+      font-size: 18px;
+      border-color: var(--gray-backgroud-color-lines);
+      border-width: 1px;
+      border-radius: 0px 12px 12px 0px;
+      background-size: 20px 20px;
+      background-position: 10px;
+      min-width: 80%;
+      background:  rgba(102, 179,186, 0.3);
+      background-image: "<i class="fa fa-search"></i>";
+    };
+  }
+  
+  /*  Search icon */
+  
+  .search_button {
+    width: 40px;
+    padding: 3px;
+    height: 36px;
+    border: 1px solid var(--color-primary);
+    background: var(--color-filds-input);
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px;
+  }
+
+  /* Header tables*/
+
+  .title_table_results{
+    color: var(--color-purple-dark);
+    font-size: 1.6em;
+    margin-bottom: 1em;
+    span{
+      text-align: center;
+      padding: 1em;
+      border-radius: 10px 10px 0px 0px;
+      background: var(--color-filds-input);
+      &:hover{
+        color: #000;
+        font-weight: bold;
+        transition: 0.7s;
+      }
+    }
+  }
+  
+  /* Result Fields table */
+  .search_result_table{
+    overflow: scroll; 
+    height: 400px;
+    overflow-x: hidden;
+
+    table{
+      color: var(--color-purple-dark);
+      font-size: 1.6em;
+      .fieds_table_results{
+        td{
+          border-radius: 10px 10px 0px 0px;
+          background: var(--color-filds-input);
+          &:hover{
+            color: #000;
+            font-weight: bold;
+            transition: 0.7s;
+          }
+        }
+      }
+      tr:hover{
+        background: var(--color-primary-translucent);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }  
+  }
+}
+
+
