@@ -2,23 +2,9 @@
   "use strict";
 
   //===== Preloader
-
-  window.onload = function () {
+  $(function () {
     window.setTimeout(fadeout, 500);
-
-    //======= tiny slider for slider-active
-    tns({
-      container: '.slider-active',
-      items: 1,
-      slideBy: 'page',
-      autoplay: true,
-      mouseDrag: true,
-      gutter: 0,
-      nav: true,
-      controls: false,
-      autoplayButtonOutput: false,
-    });
-  }
+  });
 
   function fadeout() {
     document.querySelector('.preloader').style.opacity = '0';
@@ -97,17 +83,9 @@
       navbarCollapse.classList.remove('show')
     })
   );
+
   navbarToggler.addEventListener('click', function () {
     navbarToggler.classList.toggle("active");
-  })
-
-
-
-
-  //======== WOW active
-  new WOW().init();
-
-
-
+  });
 
 })();	
