@@ -35,11 +35,7 @@ namespace :dev do
       name = Faker::Name.name
       User
         .create!(name: name,
-<<<<<<< Updated upstream
                  email: Faker::Internet.email(name: (I18n.transliterate name)).downcase,
-=======
-                 email: Faker::Internet.email(name: (I18n.transliterate name)),
->>>>>>> Stashed changes
                  password: DEFAULT_PASWORD,
                  password_confirmation: DEFAULT_PASWORD)
     end
