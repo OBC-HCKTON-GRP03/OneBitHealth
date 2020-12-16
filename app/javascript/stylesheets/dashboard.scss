@@ -1,3 +1,24 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary); 
+  border-radius: 10%;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
 a#header_table_exam , #header_table_appointment, #header_table_treatment {
 	font-family: 'Oxygen', sans-serif;
 	color: var(--gray-inputs-legends);
@@ -10,4 +31,122 @@ a#header_table_exam , #header_table_appointment, #header_table_treatment {
 	font-size: 1.3em;
 	color: var(--gray-inputs-legends);
 	font-weight: bold;
+}
+
+/* Field Search in Dashboard View */
+
+$transition: all .5s ease;
+
+.search_field_dashboard {
+  width: 100px;
+  height: 100px;
+  margin: 40px auto 0;
+  position: relative;
+  background-color: var(--color-primary-translucent);
+  overflow: hidden;
+  border-radius: 20px;
+  transition: $transition;
+  &:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 100%;
+    position: relative;
+    background-color: var(--color-primary);
+    transition: $transition;
+  }
+  &.open {
+    width: 80%;
+    &:before {
+      height: 60px;
+      margin: 20px 0 20px 30px;
+      position: absolute;
+    }
+  }
+}
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  color: #000;
+  padding: 20px 100px 20px 45px;
+  font-size: 40px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-button {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#search_for_consults{
+	opacity: 0.0;
+	overflow: hidden;
+}
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 3px solid var(--color-primary);
+  display: block;
+  position: relative;
+  margin-left: 5px;
+  transition: $transition;
+  &:before {
+  	overflow: hidden;
+    content: '';
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    right: -2px;
+    z-index: 1;
+    top: 30px;
+    display: block;
+    background-color: var(--color-primary);
+    transform: rotate(-45deg);
+    transition: $transition;
+  }
+  &:after {
+    content: '';
+    width: 3px;
+    height: 15px;
+    z-index: 1;
+    position: absolute;
+    right: -12px;
+    top: 40px;
+    display: block;
+    background-color: var(--color-primary);
+    transform: rotate(-45deg);
+    transition: $transition;
+  }
+  .open & {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    &:before {
+      transform: rotate(52deg);
+      right: 22px;
+      top: 23px;
+      height: 18px;
+    }
+    &:after {
+      transform: rotate(-230deg);
+      right: 22px;
+      top: 13px;
+      height: 18px;
+    }
+  }
 }

@@ -1,14 +1,16 @@
+<!-- This partial renders on the dashboard the search data that the user entered about exam, treatments or appointments -->
 <% if results.count > 0 %>
+<div class="tables_standart">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col-md-3">Título</th>
-        <th scope="col-md-3">Data</th>
-        <th scope="col-md-3">Profissional</th>
-        <th scope="col-md-3">Estabelecimento</th>
+        <th scope="col" class="align-middle text-center font-weight-bold">Título</th>
+        <th scope="col" class="align-middle text-center font-weight-bold">Data</th>
+        <th scope="col" class="align-middle text-center font-weight-bold">Nome do Profissional</th>
+        <th scope="col" class="align-middle text-center font-weight-bold">Estabelecimento</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody>    
       <% results.each do |result| %>
         <tr>
           <td>
@@ -27,6 +29,7 @@
       <% end %>
     </tbody>
   </table>
+</div>
 <% else %>
   <h4>Consulta não retornou nenhum registro.</h4>
 <% end %>
