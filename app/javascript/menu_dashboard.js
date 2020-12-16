@@ -37,5 +37,13 @@
 
   });
 
+  /* Search animation */
+
+  $('.search-button').click(function(){
+    $(this).parent().toggleClass('open');
+  });
+
+
+
 })(jQuery);
 
