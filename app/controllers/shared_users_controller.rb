@@ -15,6 +15,7 @@ class SharedUsersController < ApplicationController
     respond_to do |format|
       if @share_user.save
         format.html { redirect_to dashboard_path, notice: 'Compartilhamento efetuado com sucesso!' }
+        format.js {render json: @share_user, status: :created }.to_json 
       else
         format.html { render :new }
       end
@@ -34,11 +35,20 @@ class SharedUsersController < ApplicationController
   end
 
   def destroy
-    @shared_user.destroy
-    redirect_to dashboard_path
+
+    shared = current_user.users_i_share_with.select { |shared| shared.id != params[:id] }
+
+    respond_to do |format|
+      if @shared_user.destroy
+        format.html { redirect_to dashboard_path, notice: 'Exclusão efetuado com sucesso!' }
+        format.js {render json: { shared: shared }, status: :ok}.to_json
+      end 
+    end
+    
   end
 
   def set_shared_user
+    params.permit(:i_share_with_id)
     # @shared_user = SharedUser.find_by(user_id: params[:id], i_share_with_id: current_user)
     @shared_user = SharedUser.find_by(user_id: current_user, i_share_with_id: params[:id])
   end

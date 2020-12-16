@@ -81,7 +81,7 @@
   }
   
   /* Result Fields table */
-  .search_result_table{
+  .search_result_table, .person_already_shared_table{
     overflow: scroll; 
     height: 400px;
     overflow-x: hidden;
@@ -99,12 +99,12 @@
             transition: 0.7s;
           }
         }
+        tr:hover{
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          background: var(--color-primary-translucent);
+        }
       }
-      tr:hover{
-        background: var(--color-primary-translucent);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-    }  
+    }
   }
 }
 
