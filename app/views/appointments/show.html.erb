@@ -6,9 +6,9 @@
     <div class="card">
       <input type="checkbox" id="bgtoggle" class="toggle" />
       <label for="bgtoggle" class="menu"></label>
-      
+
       <!-- Data the appointments -->
-      
+
       <div class="contents">
         <div class="container-fluid">
           <div class="row mb-3">
@@ -32,45 +32,48 @@
           <div class="row mb-3 mt-5">
             <% if @appointment.exams.any? %>
 
-              <h5 class="attribute_camp mr-4">Exames associados :</h5>
+              <h5 class="attribute_camp mr-4">Exames associados:</h5>
               <div class="container mb-5 ">
                 <% @appointment.exams.each do |exam| %>
                   <div class="row tables_standart_show_views">
-                    <%= link_to "#{exam.title}" , [@appointment, exam], class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
+                    <%= link_to "#{exam.title}" , [@appointment, exam],
+                      class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
                   </div>
-                <% end %>
+                  <% end %>
               </div>
-            <% end %>
+              <% end %>
           </div>
 
-          <div class="row mb-4 border-bottom border-dark" style="padding-bottom: 2em; color: var(--gray-inputs-legends) ; ">
+          <div class="row mb-4 border-bottom border-dark"
+            style="padding-bottom: 2em; color: var(--gray-inputs-legends) ; ">
             <% if @appointment.treatments.any? %>
-              <h5 class="attribute_camp mr-4">Exames associados :</h5>              
+              <h5 class="attribute_camp mr-4">Tratamentos associados:</h5>
               <div class="container">
                 <% @appointment.treatments.each do |treatment| %>
                   <div class="row tables_standart_show_views">
-                    <%= link_to "#{treatment.title}" , [@appointment, treatment], class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
+                    <%= link_to "#{treatment.title}" , [@appointment, treatment],
+                      class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
                   </div>
-                <% end %>
+                  <% end %>
               </div>
-            <% end %>
+              <% end %>
           </div>
 
           <% unless current_user !=@appointment.user %>
             <div class="row mb-5 interactive_button">
-              <%= link_to 'Editar' , edit_appointment_path(@appointment), 
-              class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
-              
-              <%= link_to 'Adicionar Exame' , new_appointment_exam_path(@appointment), 
-              class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left"%>
+              <%= link_to 'Editar' , edit_appointment_path(@appointment), class:"button_style_horizontal btn mb-4 btn-sm
+                btn-block text-left" %>
 
-              <%= link_to 'Adicionar Tratamento' , new_appointment_treatment_path(@appointment),
-              class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
-              
-              <%= link_to 'Voltar ao Histórico' , appointments_path, 
-              class:"btn-info button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
+                <%= link_to 'Adicionar Exame' , new_appointment_exam_path(@appointment), class:"button_style_horizontal
+                  btn mb-4 btn-lg btn-block text-left"%>
+
+                  <%= link_to 'Adicionar Tratamento' , new_appointment_treatment_path(@appointment),
+                    class:"button_style_horizontal btn mb-4 btn-lg btn-block text-left" %>
+
+                    <%= link_to 'Voltar ao Histórico' , appointments_path, class:"btn-info button_style_horizontal btn
+                      mb-4 btn-lg btn-block text-left" %>
             </div>
-          <% end %>
+            <% end %>
         </div>
       </div>
     </div>
