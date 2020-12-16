@@ -35,7 +35,7 @@
               <h5 class="attribute_camp mr-4">Exames associados :</h5>
               <div class="container mb-5 ">
                 <% @appointment.exams.each do |exam| %>
-                  <div class="row tables_standart">
+                  <div class="row tables_standart_show_views">
                     <%= link_to "#{exam.title}" , [@appointment, exam], class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
                   </div>
                 <% end %>
@@ -48,7 +48,7 @@
               <h5 class="attribute_camp mr-4">Exames associados :</h5>              
               <div class="container">
                 <% @appointment.treatments.each do |treatment| %>
-                  <div class="row tables_standart">
+                  <div class="row tables_standart_show_views">
                     <%= link_to "#{treatment.title}" , [@appointment, treatment], class: "btn button_shape create_instance text-dark text-decoration-none  mt-2" %>
                   </div>
                 <% end %>
