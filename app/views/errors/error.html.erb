@@ -1,20 +1,20 @@
 <section class="container-fluid d-flex align-items-center"  style="background-color: #00ADB5; height: 150px;">
-  <h1 class="mx-auto text-white"><%= t('common.errors_hanlder.title', status_code: @status_code) %></h1>
+  <h1 class="mx-auto text-white"><%= t('common.errors_handler.title', status_code: @status_code) %></h1>
 </section>
 <section class="container-fluid shadow-lg bg-white rounded" style="height: 550px; width: 500px; margin-top: 150px;">
   <div class="row d-flex align-items-center" style="height: 100px; background-color: #00adb561;">
-    <h1 class="mx-auto" style="color: #00ADB5;"> <%= t('common.errors_hanlder.stator_code', status_code: @status_code) %></h1>
+    <h1 class="mx-auto" style="color: #00ADB5;"> <%= t('common.errors_handler.status_code', status_code: @status_code) %></h1>
   </div>
   <div class="pt-5 row">
     <div class="mx-auto" >
       <h3 style="margin-top: 100px;">
-        <p><%= t("common.errors_hanlder.#{@status_code}.summary") %></p>
+        <p><%= t("common.errors_handler.#{@status_code}.summary") %></p>
       </h3>
       <div style="margin-top: 100px;">
         <h5>
-          <%= t("common.errors_hanlder.#{@status_code}.description") %>
+          <%= t("common.errors_handler.#{@status_code}.description") %>
         </h5>
-        <%= link_to t('common.errors_hanlder.retrurn_link'), root_path, class:"btn btn-block mt-4 text-white", style:"background-color: #00ADB5;" %>
+        <%= link_to t('common.errors_handler.return_link'), root_path, class:"btn btn-block mt-4 text-white", style:"background-color: #00ADB5;" %>
       </div>
     </div>
   </div>
