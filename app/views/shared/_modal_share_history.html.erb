@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+<div class="modal fade" id="modal_share" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">    
     <div class="modal-content">
@@ -30,7 +30,7 @@
 
         <!-- Where search result fields appear -->
         <div class="title_table_results mt-2">
-          <span class="2 text-center"> Compartilhar seu Histórico</td>
+          <span class=" text-center"> Compartilhar seu Histórico</td>
         </div>
 
         <div class="container search_result_table mb-5">
@@ -47,37 +47,33 @@
         <!-- ---------------------------------------------------------- -->
 
         <!-- Users you shared your queries with   -->
-        <div class="title_search_result_table title_table_results">
-          <span class="2 text-center"> Remover Compatilhamento</td>
+        <div class="title_table_results mt-2">
+          <span class="text-center"> Remover Compatilhamento</td>
         </div>
 
-        <div class="container search_result_table mb-5">
-          <table class="table mt-5">
+        <div class="person_already_shared_table container mb-5">
+          <table class="users_shared table mt-5">
             <thead>
               <tr>
               </tr>
             </thead>
-          <tbody>
-            
-            <% current_user.users_i_share_with.each do |shared| %>
-              <tr>
-                <td>
-                  <%= "#{shared.name}" %>
-                </td>
-                <td>
-                  <%= link_to shared_user_path(shared), method: :delete, data: { confirm: 'Você tem certeza?' } do %>
-                    <%= image_tag('icon_trash.svg')%>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
+            <tbody>
+              <% current_user.users_i_share_with.each do |shared| %>
+                <tr>
+                  <td>
+                    <%= "#{shared.name}" %>
+                  </td>
+                  <td class="remove_user_shared" id=<%="#{shared.id}"%> >
+                    <%= image_tag('icon_trash.svg')%>                 
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
         </table>
       </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <button type="button" class="btn btn-aqua" id="new-task">Share</button>
     </div>
   </div>
