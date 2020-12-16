@@ -26,10 +26,7 @@ $(document).ready(() => {
 
 				tbody_share_history.html("");
 
-				shared_users.sort(
-					/*alphabetical ordenation name*/
-					(user1,user2) => user1.name < user2.name ? -1 : user1.name > user2.name ? 1 : 0 
-				).forEach((item, index) => {
+				shared_users.forEach((item, index) => {
 					tbody_share_history.append(`
 						<tr>
 							<td class="text-center add_share" id=${index}><img src="/assets/icon_user_add.svg"></td>
@@ -60,11 +57,7 @@ $(document).ready(() => {
 
 					tbody_remove_share.html("");
 					
-					users_who_already_share.sort( 
-						/*alphabetical ordenation name*/
-						(user1,user2) => user1.name < user2.name ? -1 : user1.name > user2.name ? 1 : 0 
-						
-					).forEach((item) => {
+					users_who_already_share.forEach((item) => {
 						if(item.id != id){
 							tbody_remove_share.append(`
 								<tr>
