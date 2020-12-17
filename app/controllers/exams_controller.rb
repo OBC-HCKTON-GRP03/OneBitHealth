@@ -45,7 +45,7 @@ class ExamsController < ApplicationController
   def update
     respond_to do |format|
       if @exam.update(exam_params)
-        # Ao fazer a atualização você voltará para tela de update  
+        # Ao fazer a atualização você voltará para tela de update
         format.html { redirect_to appointment_path(@appointment), notice: 'Exame foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @exam }
       else
@@ -75,7 +75,7 @@ class ExamsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def exam_params
     params.require(:exam).permit(:title, :description, :establishment_name, :exam_date, :appointment_id,
-                                 { documents: [] })
+                                 documents: [])
   end
 
   def get_appointment

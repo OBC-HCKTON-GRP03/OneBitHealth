@@ -61,4 +61,6 @@ gem 'rubocop-performance', require: false
 
 gem 'carrierwave', '~> 2.1'
 
-gem "tty-spinner", "~> 0.9.3"
+gem 'tty-spinner', '~> 0.9.3'
+
+gem 'aws-sdk-s3', '~> 1.86', require: false

@@ -15,8 +15,9 @@
 #  documents          :json
 #
 class Exam < ApplicationRecord
+  has_many_attached :documents
   # CarrierWave Uploader
-  mount_uploaders :documents, DocumentUploader
+  # mount_uploaders :documents, DocumentUploader
   # Active Record Associations
   belongs_to :appointment
   has_one :user, through: :appointment
