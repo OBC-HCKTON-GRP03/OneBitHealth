@@ -98,7 +98,7 @@ Project created for the first hackaton of the One Bit Code Fullstack Developer B
   ```sh
   bundle install
   ```
-  And after that:
+   And after that:  
   ```sh
   yarn install
   ```
@@ -185,8 +185,9 @@ Project Link: [https://github.com/OBC-HCKTON-GRP03/OneBitHealth](https://github.
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
+* Home layout from [UIdeck](https://uideck.com/);
 * Bootstrap version 4.3;
-* jQuery;
+* jQuery.
 
 
 
