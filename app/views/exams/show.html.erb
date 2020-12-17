@@ -38,11 +38,11 @@
               <%= image_tag 'icon_file.svg' , class: "ml-2" %> Documentos :
             </h5>
             <div class="container">
-              <% @exam.documents.each_with_index do |document, index| %>
+              <% @exam.documents.each do |document| %>
                 <div class="row ml-5">
                   <button type="button" class="btn btn-success">
                     <div class="col">
-                      <%= link_to "Anexo #{index + 1}" , document.service_url, target: '_blank' ,
+                      <%= link_to "Anexo: #{document.filename.to_s}" , document.service_url, target: '_blank' ,
                         class: "text-decoration-none text-light bold font-weight-bold" %>
                         <%= link_to 'Remove' , delete_exam_attached_appointment_exam_path(@exam.appointment_id,
                           document.signed_id), method: :delete, data: { confirm: 'Tem certeza?' } %>

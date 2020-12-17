@@ -11,24 +11,18 @@
     <div class="col-lg-10">
       <%= simple_form_for([@appointment, @exam]) do |f| %>
         <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-            <div class="form-group">
-              <%= f.input :title, label: 'Título' %>
-                <%= f.input :description, label: 'Descrição' %>
-                  <%= f.input :establishment_name %>
-                    <%= f.datetime_field :exam_date %>
-                      <%= f.label 'Documentos' %>
-                        <%= f.file_field :documents, multiple: true %>
-                          <% if action_name=='edit' %>
-                            <%= f.button :submit, "Editar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4 btn-lg
-                              btn-block text-center"} %>
-                              <% else %>
-                                <%= f.button :submit, "Criar Exame" , {class:"btn mt-3 button-submit-auth-entry mb-4
-                                  btn-lg btn-block text-center"} %>
-                                  <% end %>
-            </div>
-            <% end %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-group">
+          <%= f.input :title, label: 'Título' %>
+          <%= f.input :description, label: 'Descrição' %>
+          <%= f.input :establishment_name %>
+          <%= f.datetime_field :exam_date %>
+          <%= f.label 'Documentos' %>
+          <%= f.file_field :documents, multiple: true %>
+          <%= f.button :submit, "Enviar", { class: "btn mt-3 button-submit-auth-entry mb-4 btn-lg
+                              btn-block text-center" } %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
