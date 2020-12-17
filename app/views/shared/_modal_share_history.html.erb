@@ -1,31 +1,31 @@
 <div class="modal fade" id="modal_share" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
   aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">    
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-     
+
       <!-- Title -->
-     
+
       <div class="modal-header">
         <%= image_tag 'icon_share_history.svg' %>
-        <h2 class="modal-title ml-3" id="exampleModalLongTitle">
-           Compartilhamento
-        </h2>
+          <h2 class="modal-title ml-3" id="exampleModalLongTitle">
+            Compartilhamento
+          </h2>
 
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>  
-      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+
       <!-- Input Search -->
-      
+
       <div class="modal-body">
         <div class="input_search mb-5 mt-1">
-            <div class="container">
-              <span class="input-group-append justify-content-center">
-                  <%= image_tag 'icon_search_magnifying_glass', class:"search_button" %>
-                  <input type="text" id="shared_search" name="share_search" value="" placeholder="Digíte um e-mail">
-              </span>
-            </div>
+          <div class="container">
+            <span class="input-group-append justify-content-center">
+              <%= image_tag 'icon_search_magnifying_glass.svg' , class:"search_button" %>
+                <input type="text" id="shared_search" name="share_search" value="" placeholder="Digíte um e-mail">
+            </span>
+          </div>
         </div>
 
         <!-- Where search result fields appear -->
@@ -39,7 +39,7 @@
               <tr>
               </tr>
             </thead>
-            <tbody>              
+            <tbody>
               <!-- Field where it will print results -->
             </tbody>
           </table>
@@ -63,19 +63,19 @@
                   <td>
                     <%= "#{shared.name}" %>
                   </td>
-                  <td class="remove_user_shared" id=<%="#{shared.id}"%> >
-                    <%= image_tag('icon_trash.svg')%>                 
+                  <td class="remove_user_shared" id=<%="#{shared.id}" %> >
+                    <%= image_tag('icon_trash.svg')%>
                   </td>
                 </tr>
-              <% end %>
+                <% end %>
             </tbody>
-        </table>
+          </table>
+        </div>
+        </form>
       </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-aqua" id="new-task">Share</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-aqua" id="new-task">Share</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
