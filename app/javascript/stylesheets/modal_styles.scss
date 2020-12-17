@@ -83,7 +83,7 @@
   /* Result Fields table */
   .search_result_table, .person_already_shared_table{
     overflow: scroll; 
-    height: 400px;
+    max-height: 400px;
     overflow-x: hidden;
 
     table{
