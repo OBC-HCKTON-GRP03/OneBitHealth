@@ -24,4 +24,6 @@ RSpec.describe Treatment, type: :model do
 
   it { is_expected.to validate_presence_of(:kind) }
   it { is_expected.to define_enum_for(:kind).with_values({ medicine: 0, physiotherapy: 1 }) }
+
+  it { is_expected.to belong_to(:appointment) }
 end
