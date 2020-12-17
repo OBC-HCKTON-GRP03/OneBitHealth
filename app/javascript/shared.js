@@ -29,7 +29,7 @@ $(document).ready(() => {
 				shared_users.forEach((item, index) => {
 					tbody_share_history.append(`
 						<tr>
-							<td class="text-center add_share" id=${index}><img src="/assets/icon_user_add.svg"></td>
+							<td class="text-center add_share" id=${index}><img src="icon_user_add.svg"></td>
 							<td class="text-center">${item.name}</td>
 						</tr>
 					`)
