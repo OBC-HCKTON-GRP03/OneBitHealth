@@ -42,9 +42,10 @@
                 <div class="row ml-5">
                   <button type="button" class="btn btn-success">
                     <div class="col">
-                      byebug
-                      <%= link_to "Anexo #{index + 1}" , rails_blob_path(document.documents, disposition: "attachment"
-                        ), target: '_blank' , class: "text-decoration-none text-light bold font-weight-bold" %>
+                      <%= link_to "Anexo #{index + 1}" , document.service_url, target: '_blank' ,
+                        class: "text-decoration-none text-light bold font-weight-bold" %>
+                        <%= link_to 'Remove' , delete_exam_attached_appointment_exam_path(@exam.appointment_id,
+                          document.signed_id), method: :delete, data: { confirm: 'Tem certeza?' } %>
                     </div>
                   </button>
                 </div>

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :appointments do
-    resources :exams
+    resources :exams do
+      member do
+        delete :delete_exam_attached
+      end
+    end
     resources :treatments
   end
 

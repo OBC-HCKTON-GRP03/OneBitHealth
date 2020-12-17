@@ -65,6 +65,15 @@ class ExamsController < ApplicationController
     end
   end
 
+  def delete_exam_attached
+    @exam = ActiveStorage::Blob.find_signed(params[:id])
+    exam = ActiveStorage::Attachment.find_by(record_type: 'Exam', blob_id: @exam.id)
+    exam_id = exam.record_id
+    exam.purge
+    @exam = Exam.find(exam_id)
+    redirect_to appointment_exam_path(@exam.appointment, @exam)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
