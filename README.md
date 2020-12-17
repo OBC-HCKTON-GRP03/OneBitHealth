@@ -172,6 +172,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
+Daniel Sacramento - [@dansacramento](https://twitter.com/dansacramento) - danisacra@gmail.com  
 Diego de A. Senott - [@senott](https://twitter.com/senott) - senott@yahoo.com  
 Haroldo Furtado - haroldofurtado@gmail.com  
 Jorge Borges - jorgeborgesdev@gmail.com  
