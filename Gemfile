@@ -24,7 +24,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'cucumber-rails', '~> 2.2', require: false
   gem 'factory_bot_rails', '~> 6.1'
-  gem 'faker', '~> 2.15', '>= 2.15.1'
+
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'shoulda-matchers', '~> 4.4', '>= 4.4.1'
 end
@@ -64,3 +64,5 @@ gem 'carrierwave', '~> 2.1'
 gem 'tty-spinner', '~> 0.9.3'
 
 gem 'aws-sdk-s3', '~> 1.86', require: false
+
+gem 'faker', '~> 2.15', '>= 2.15.1'

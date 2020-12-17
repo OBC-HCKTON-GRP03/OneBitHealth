@@ -3,23 +3,23 @@ namespace :dev do
 
   desc 'Configurações básicas para o desenvolvimento da aplicação!'
   task setup: :environment do
-    if Rails.env.development?
-      `lsof -t -i tcp:3000 | xargs kill -9` if `lsof -t -i tcp:3000`.present?
-      show_spinner('Apagando BD...') { `rails db:drop` }
-      show_spinner('Criando BD...') { `rails db:create` }
-      show_spinner('Migrando BD...') { `rails db:migrate` }
-      show_spinner('Cadastrando o usuário padrão (Admin)...') { `rails dev:add_default_admin` }
-      show_spinner('Cadastrando os demais usuários padrões...') { `rails dev:add_defaul_users` }
-      show_spinner('Cadastrando as consultas para os usuários...') { `rails dev:add_appointments_to_user` }
-      show_spinner('Cadastrando os exames para as consultas...') { `rails dev:add_exams_to_appointment` }
-      show_spinner('Cadastrando os tratamentos para as consultas...') { `rails dev:add_treatments_to_appointment` }
-      show_spinner('Cadastrando alguns usuários compartilhados...') { `rails dev:add_some_shared_users` }
-      puts 'Ooooooowwww! Deu tudo certo! \\o/'
-      puts 'Vou subir o servidor para você...'
-      exec('rails s')
-    else
-      puts 'Você não está em ambiente de desenvolvimento!'
-    end
+    # if Rails.env.development?
+    # `lsof -t -i tcp:3000 | xargs kill -9` if `lsof -t -i tcp:3000`.present?
+    # show_spinner('Apagando BD...') { `rails db:drop` }
+    # show_spinner('Criando BD...') { `rails db:create` }
+    # show_spinner('Migrando BD...') { `rails db:migrate` }
+    show_spinner('Cadastrando o usuário padrão (Admin)...') { `rails dev:add_default_admin` }
+    show_spinner('Cadastrando os demais usuários padrões...') { `rails dev:add_defaul_users` }
+    show_spinner('Cadastrando as consultas para os usuários...') { `rails dev:add_appointments_to_user` }
+    show_spinner('Cadastrando os exames para as consultas...') { `rails dev:add_exams_to_appointment` }
+    show_spinner('Cadastrando os tratamentos para as consultas...') { `rails dev:add_treatments_to_appointment` }
+    show_spinner('Cadastrando alguns usuários compartilhados...') { `rails dev:add_some_shared_users` }
+    puts 'Ooooooowwww! Deu tudo certo! \\o/'
+    # puts 'Vou subir o servidor para você...'
+    # exec('rails s')
+    # else
+    # puts 'Você não está em ambiente de desenvolvimento!'
+    # end
   end
 
   task add_default_admin: :environment do
