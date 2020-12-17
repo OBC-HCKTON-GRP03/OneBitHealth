@@ -32,7 +32,7 @@
     <a href="https://github.com/OBC-HCKTON-GRP03/OneBitHealth"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="http://onebithealth.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/OBC-HCKTON-GRP03/OneBitHealth/issues">Report Bug</a>
     ·
@@ -63,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![One Bit Health Screen Shot][product-screenshot]](#)
+[![One Bit Health Screen Shot][product-screenshot]](http://onebithealth.herokuapp.com/)
 
 Project created for the first hackaton of the One Bit Code Fullstack Developer Bootcamp.
 
