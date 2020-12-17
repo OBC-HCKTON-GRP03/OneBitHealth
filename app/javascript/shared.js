@@ -62,7 +62,7 @@ $(document).ready(() => {
 							tbody_remove_share.append(`
 								<tr>
 									<td>${item.name}</td>
-									<td class="remove_user_shared" id=${item.id}><img src="/assets/icon_trash.svg"></td>
+									<td class="remove_user_shared" id=${item.id}><img src="icon_trash.svg"></td>
 								</tr>
 							`)
 						}
@@ -110,7 +110,7 @@ $(document).ready(() => {
 					tbody_remove_share.append(`
 						<tr>
 							<td>${user_name}</td>
-							<td class="remove_user_shared" id=${user_share_id}><img src="/assets/icon_trash.svg"></td>
+							<td class="remove_user_shared" id=${user_share_id}><img src="icon_trash.svg"></td>
 						</tr>
 					`)
 				}
