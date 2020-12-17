@@ -13,9 +13,9 @@
     <div class="card">
       <input type="checkbox" id="bgtoggle" class="toggle" />
       <label for="bgtoggle" class="menu"></label>
-      
+
       <!-- Data the appointments -->
-      
+
       <div class="contents">
         <div class="container-fluid">
           <div class="row mb-3">
@@ -36,19 +36,19 @@
             </span>
           </div>
 
-          <% unless @treatment.appointment_id != current_user.id %>
+          <% unless @shared_user %>
             <div class="row mt-5 interactive_button">
-              
-              <%= link_to 'Editar' , edit_appointment_treatment_path(@appointment, @treatment), 
+
+              <%= link_to 'Editar' , edit_appointment_treatment_path(@appointment, @treatment),
                 class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
-              
-              <%= link_to 'Remover Tratamento', [@appointment, @treatment], method: :delete, data: { confirm: 'Você tem certeza?' }, 
-                class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
-              
-              <%= link_to 'Voltar à Consulta' , appointment_path(@appointment), 
-              class:"btn-info button_style_horizontal btn mb-4 btn-sm btn-block text-left"  %>
+
+                <%= link_to 'Remover Tratamento' , [@appointment, @treatment], method: :delete, data: {
+                  confirm: 'Você tem certeza?' }, class:"button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
+
+                  <%= link_to 'Voltar à Consulta' , appointment_path(@appointment), class:"btn-info
+                    button_style_horizontal btn mb-4 btn-sm btn-block text-left" %>
             </div>
-          <% end%>
+            <% end%>
         </div>
       </div>
     </div>

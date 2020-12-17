@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :appointments do
-    resources :exams do
+    resources :exams, except: [:index] do
       member do
         delete :delete_exam_attached
       end
     end
-    resources :treatments
+    resources :treatments, except: [:index]
   end
 
   get 'home', to: 'home#index'

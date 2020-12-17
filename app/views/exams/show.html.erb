@@ -53,7 +53,7 @@
             <% end %>
           </div>
 
-          <% unless @exam.appointment_id !=current_user.id %>
+          <% unless @exam.user !=current_user %>
             <div class="row mt-5 interactive_button">
 
               <%= link_to 'Editar' , edit_appointment_exam_path(@appointment, @exam), class:"button_style_horizontal btn

@@ -1,5 +1,6 @@
 <p id="notice">
-  <%= notice %></p>
+  <%= notice %>
+</p>
 <div class="tables_standart mb-5">
   <h1>Tratamentos</h1>
 
@@ -29,17 +30,17 @@
             <td>
               <%= link_to edit_appointment_treatment_path(@appointment, treatment) do %>
                 <%= image_tag 'icon_edit.svg' %>
-              <% end %>
+                  <% end %>
             </td>
             <td>
-              <%= link_to  [@appointment, treatment], method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+              <%= link_to [@appointment, treatment], method: :delete, data: { confirm: 'Você tem certeza?' } do %>
                 <%= image_tag('icon_trash.svg')%>
-              <% end %>
+                  <% end %>
             </td>
-          <% end %>
+            <% end %>
         </tr>
-      <% end %>
+        <% end %>
     </tbody>
-    
+
   </table>
 </div>

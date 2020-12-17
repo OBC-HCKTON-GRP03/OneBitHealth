@@ -1,45 +1,64 @@
 <!-- Não há um index no projeto -->
 
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <div class="tables_standart mb-5">
   <h1>Exams</h1>
 
   <table class="table table-hover" data-toggle="table" data-search="true" data-strict-search="true">
 
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Establishment name</th>
-      <th>Exam date</th>
-      <th>Appointment</th>
-      <th colspan="3" style="background-color: var(--color-primary)"></th>
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Establishment name</th>
+        <th>Exam date</th>
+        <th>Appointment</th>
+        <th colspan="3" style="background-color: var(--color-primary)"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @exams.each do |exam| %>
-    <tr>
-      <td><%= exam.title %></td>
-      <td><%= exam.description %></td>
-      <td><%= exam.establishment_name %></td>
-      <td><%= exam.exam_date %></td>
-      <td><%= exam.appointment_id %></td>
-      
-      <td><%= link_to image_tag('icon_show.svg'), [@appointment] %></td>
-      <% unless @appointment.user != current_user %>
-        <td><%= link_to image_tag('icon_edit.svg'), edit_appointment_exam_path(@appointment, exam) %></td>
-        <td><%= link_to image_tag('icon_trash.svg'), [@appointment, exam], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+    <tbody>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td>
+            <%= exam.title %>
+          </td>
+          <td>
+            <%= exam.description %>
+          </td>
+          <td>
+            <%= exam.establishment_name %>
+          </td>
+          <td>
+            <%= exam.exam_date %>
+          </td>
+          <td>
+            <%= exam.appointment_id %>
+          </td>
 
-    </tr>
+          <td>
+            <%= link_to image_tag('icon_show.svg'), [@appointment] %>
+          </td>
+          <% unless exam.user !=current_user %>
+            <td>
+              <%= link_to image_tag('icon_edit.svg'), edit_appointment_exam_path(@appointment, exam) %>
+            </td>
+            <td>
+              <%= link_to image_tag('icon_trash.svg'), [@appointment, exam], method: :delete, data: {
+                confirm: 'Are you sure?' } %>
+            </td>
+            <% end %>
+
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <% unless @appointment.user !=current_user %>
+    <button class="button_shape create_instance btn-lg btn-block interactive_button mt-5">
+      <%= link_to 'New Exam' , new_appointment_exam_path(@appointment) %>
+    </button>
     <% end %>
-  </tbody>
-</table>
-<% unless @shared_user %>
-  <button class="button_shape create_instance btn-lg btn-block interactive_button mt-5">
-    <%= link_to 'New Exam', new_appointment_exam_path(@appointment) %>
-  </button>
-<% end %>
 </div>

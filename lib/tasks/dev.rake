@@ -31,7 +31,7 @@ namespace :dev do
   end
 
   task add_defaul_users: :environment do
-    9.times do |_x|
+    9.times do
       name = Faker::Name.name
       User
         .create!(name: name,
