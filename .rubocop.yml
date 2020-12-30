@@ -2,3 +2,5 @@ require:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
+AllCops:
+  NewCops: enable
