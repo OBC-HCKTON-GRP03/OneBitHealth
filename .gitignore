@@ -29,6 +29,9 @@ config/master.key
 .env
 .env.*
 
+# Ignore ASDF files
+.tool-versions
+
 ## Environment normalization:
 /.bundle
 /vendor/bundle
